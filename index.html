@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Phillip Kingston - Engineer & Entrepreneur</title>
+    <meta name="description" content="Phillip Kingston is a British Australian entrepreneur and engineer that has spent twenty years in tech as a founder, CEO and CTO across financial services, cybersecurity, artificial intelligence, and deep tech industries. Companies founded include Sargon, GrowthOps, Galactic Bioware and Trimantium">
+    <meta name="keywords" content="Phillip Kingston, Phil Kingston, AppliedAI, Opus, Machine Learning, State University Kyiv Aviation Institute, Sargon, Trimantium, GrowthOps">
+    <meta name="author" content="Phillip Kingston">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Phillip Kingston - Engineer & Entrepreneur">
+    <meta property="og:description" content="Phillip Kingston is a British Australian entrepreneur and engineer that has spent twenty years in tech as a founder, CEO and CTO across financial services, cybersecurity, artificial intelligence, and deep tech industries. Companies founded include Sargon, GrowthOps, Galactic Bioware and Trimantium">
+    <meta property="og:image" content="https://www.phillipkingston.com/img/og-Meta-Image-1200x630.png">
+    <meta property="og:url" content="https://www.phillipkingston.com/">
+    <meta property="og:site_name" content="Phillip Kingston - Engineer & Entrepreneur">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Phillip Kingston - Engineer & Entrepreneur">
+    <meta name="twitter:description" content="Phillip Kingston is a British Australian entrepreneur and engineer that has spent twenty years in tech as a founder, CEO and CTO across financial services, cybersecurity, artificial intelligence, and deep tech industries. Companies founded include Sargon, GrowthOps, Galactic Bioware and Trimantium">
+    <meta name="twitter:image" content="https://www.phillipkingston.com/img/Twitter-Image-1200x630.png">
+    <meta name="twitter:site" content="@phillipkingston">
+    <meta name="twitter:creator" content="@phillipkingston">
+    <link rel="icon" href="/img/phillipkingston.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/Apple-Touch-180x180.png">
+    <link rel="canonical" href="https://www.phillipkingston.com/">
+    <link rel="stylesheet" href="css/styles020320252.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MK66YC5XJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1MK66YC5XJ');
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="heading">Phillip Kingston</h1>
+        <p class="small"><a href="https://orcid.org/0009-0005-2256-3079">ORCID: 0009-0005-2256-3079</a></p>
+    </header>
+    
+    <main>
+        <p>Phillip Kingston is a Visiting Professor at State University Kyiv Aviation Institute, Kyiv, Ukraine and a Member of Technical Staff at AppliedAI in Abu Dhabi, United Arab Emirates.</p>
+        Phillip Kingston&#39;s recent research is focused on advancing AI-driven workflow automation in complex business environments. As evidenced by two key papers, his work addresses the end-to-end generation of complex workflows, from formalizing the intent behind a process to optimizing its execution, with an emphasis on incorporating domain knowledge and multimodal data. The following are the main technical areas of his contributions:
+        <h3>Workflow Automation and Optimization</h3>
+        <ul>
+            <li><b>AI-Driven Workflow Generation:</b> Kingston develops frameworks for automatically generating workflows in complex Business Process Outsourcing (BPO) scenarios, aiming to reduce costs and improve quality. These workflows model business processes as sequences of tasks that transform a given input into a desired output while respecting operational constraints.
+            <li><b>Task Decomposition with DAGs:</b> He represents workflows as Directed Acyclic Graphs (DAGs), where each node is a task and edges define execution flow​. Each task consists of executable instructions (e.g. code, tool usage) and may include human expert review steps to ensure quality​. This task-based decomposition provides a structured blueprint of complex processes.
+            <li><b>Two-Phase Generation & Optimization:</b> Kingston&#39;s approach uses a two-phase methodology for workflow creation​. In the generation phase, a Large Work Model (LWM) &#8211; a specialized AI model &#8211; produces candidate workflows from a high-level intention, leveraging domain knowledge. In the optimization phase, the candidate workflows are converted into a Workflow Graph, and path-finding algorithms then select an optimal workflow (from input to output) via path optimization techniques​. This ensures the chosen workflow is both feasible and cost-effective.
+        </ul>
+        <h3>Formalization of Workflow Intention and Business Artefacts</h3>
+        <ul>
+            <li><b>Defining Workflow Signal and Intention:</b> Kingston introduces formal concepts to capture the goal of a process. Workflow Intention is defined as the alignment of the Input, Process, and Output elements that describe a workflow&#39;s objective​. This intention is interpreted from &#8220;Workflow Signals&#8221; embedded in business artefacts (documents, data) &#8211; essentially, clues in the artefacts that indicate what input-process-output triple is needed​.
+            <li><b>Mathematical Representation:</b> He provides a mathematical framework for these concepts, representing a Workflow Signal as a vector and a Workflow Intention as a tensor​. By formalizing the intention as a tensor (a structured data object), the workflow&#39;s components and their relationships can be encoded in a machine-interpretable way. This rigorous representation helps ensure that AI models can accurately capture the structure and requirements of a workflow.
+            <li><b>Modular and Structured Workflow Modeling:</b> Kingston&#39;s framework is implemented via a modular, trainable attention-based system that can ingest business artefacts and infer the workflow intention​. The architecture is designed in separable modules (e.g. per data modality, see next section) for scalability. Furthermore, it leverages structured knowledge sources like a Work Knowledge Graph (WKG) to incorporate domain-specific procedural knowledge into the workflow model​. By combining formal intention modeling with knowledge graphs, his approach grounds workflow generation in both data-driven signals and established business rules.
+        </ul>
+        
+        <h3>Multimodal AI and Attention-Based Processing</h3>
+        <ul>
+            <li><b>Transformer Models for Diverse Data:</b> Kingston&#39;s work leverages transformer architectures (with encoder-decoder designs) to extract information from both structured and unstructured data sources, such as text, images, and documents. For example, textual data is tokenized and processed with attention mechanisms to capture semantics, while image data is processed via OCR and convolutional encoders to extract visual features​. These encoded representations are brought into a common high-dimensional space, enabling the system to handle multimodal inputs (e.g. mixing text and image content) in a unified manner.
+            <li><b>Attention-Based Multimodal Generation:</b> He has developed an attention-driven multimodal generative system that reads business artefacts (e.g. forms, documents, images) and infers the underlying workflow intention​. In this system, modality-specific encoders first handle each input type (text, image, etc.), and then intra-modality attention and fusion attention mechanisms combine information across modalities. An Intention Decoder network uses these attended features to produce the workflow intention (the triple of Input&#8211;Process&#8211;Output) that best explains the artefacts. This end-to-end design allows the AI to interpret complex business documents and derive the corresponding process they imply.
+            <li><b>Vision Transformers & Multimodal Integration:</b> Kingston also incorporates state-of-the-art vision transformer (ViT) techniques and multimodal learning paradigms to integrate visual and textual information. Vision transformers treat image patches like tokens and apply self-attention, capturing both local and global image features without traditional convolution​. His framework leverages such architectures to process image-based artefacts (like scanned documents) alongside text​. Moreover, he draws on advanced multimodal transformers (e.g. models that fuse text and vision embeddings) to ensure the AI can reason across modalities. These approaches serve as the backbone for ingesting diverse Business Artefacts and constructing a contextual understanding from them, which is crucial for generating accurate workflows​.
+        </ul>
+
+        <h3>Graph-Based Knowledge Integration</h3>
+        <ul>
+            <li><b>Work Knowledge Graph (WKG):</b> A central element of Kingston&#39;s research is the use of knowledge graphs to inject domain and procedural knowledge into the workflow generation process. He helps construct a Work Knowledge Graph, which encodes known workflows, tasks, and their relationships gathered from various industries​. This graph acts as a knowledge base of how different tasks connect and what processes are valid, capturing business rules and best practices in a structured form.
+            <li><b>Graph Neural Networks for Retrieval:</b> To utilize the WKG during workflow generation, Kingston employs Graph Attention Networks (GATs) and similar graph neural network techniques. For instance, one approach involves training a GAT over the WKG so that it can suggest related workflow nodes (tasks) that should be included in a partially generated workflow​. The GAT allows the system to retrieve relevant graph nodes by having tasks &#8220;attend&#8221; to neighbors&#39; features, effectively finding procedural steps in the knowledge graph that align with the current workflow context. This integration ensures that the AI-generated workflow is informed by known valid processes.
+            <li><b>Retrieval-Augmented Workflow Generation:</b> His methodology can be seen as a form of retrieval-augmented generation, where the AI first queries the knowledge graph for pertinent information and then uses that to guide workflow creation. Concretely, the system compares the encoded workflow intention to nodes in the WKG (using embedding similarity measures) and selects a subset of relevant nodes from the graph​. Those retrieved graph elements (tasks or sub-workflows) are provided to the LWM model as additional context, so the model generates a workflow that is consistent with domain knowledge. By augmenting the generative model with knowledge graph retrieval, Kingston&#39;s approach increases the accuracy and compliance of the resulting workflows with real-world procedures​.
+        </ul>
+        <h3>Optimization Techniques for AI-Driven Workflows</h3>
+        <ul>
+            <li><b>Cost Modeling for Workflows:</b> To choose the best workflow among many possibilities, Kingston integrates a cost modeling approach into workflow optimization. Each candidate workflow (or path in the workflow graph) is evaluated with a cost function that accounts for multiple factors: computational expense, processing time, and any model/tool usage costs​. He uses a weighted linear combination of these factors to assign a total cost to a given workflow path​. By quantitatively modeling resource and time constraints, the system can objectively compare workflows not just on feasibility, but on efficiency.
+            <li><b>Graph Search and RL for Optimal Paths:</b> For selecting the optimal execution path through the Workflow Graph, Kingston applies classic graph search algorithms and explores learning-based methods. In practice, his implementation uses a modified Dijkstra&#39;s algorithm to find the least-cost path from the input node to the output node, adapting the algorithm to consider node-associated costs (tasks costs) instead of just edge weights​. Additionally, his research acknowledges and considers reinforcement learning (RL) strategies for workflow optimization, especially for complex or dynamic scenarios​. While the current system iteration emphasizes graph algorithms due to the complexity of the action space in workflows, RL is examined as a potential approach for agents to learn optimal task sequencing in richly-defined environments​.
+            <li><b>Evaluation and Benchmarking:</b> Kingston places importance on evaluating AI-generated workflows against real-world standards. He has helped develop benchmarks in an industry context &#8211; for example, testing their Opus system on a medical coding workflow and demonstrating that the specialized models significantly outperform general Large Language Models (LLMs) (by 29&#8211;38% in workflow generation accuracy for that use case)​. Beyond accuracy, his work advocates for comprehensive metrics that include efficiency and compliance. In other words, a workflow is assessed not only on correctness, but also on execution time, resource consumption, and adherence to business rules​. This holistic evaluation framework ensures that the AI-driven workflows are practical and reliable for deployment in enterprise settings, bridging the gap between AI-generated plans and real operational constraints.
+        </ul>
+        <p>Overall, Phillip Kingston&#39;s research contributions center on bridging AI with operational business processes &#8211; formalizing the concept of a workflow intention, harnessing multimodal data through advanced neural architectures, injecting knowledge via graphs, and optimizing the results for real-world efficiency. His work provides a pathway to transform high-level process requirements into executable, optimized workflows that maintain compliance with domain knowledge and performance criteria.</p>
+        <h3>Papers:</h3>
+
+        <ul>
+            <li> <a href="/pdf/Opus-A-Workflow-Intention-Framework-for-Complex-Workflow-Generation.pdf">Opus &#8211; A Workflow Intention Framework for Complex Workflow Generation</a>
+            <li><a href="/pdf/Opus-A-Large-Work-Model-for-Complex-Workflow-Generation.pdf">Opus &#8211; A Large Work Model for Complex Workflow Generation</a>
+        </ul>
+       
+
+        <h3>Connect:</h3>
+        <a href="https://scholar.google.com/citations?user=jMYmIFkAAAAJ&hl=en&authuser=1&oi=ao" target="_blank">Google Scholar</a>, <a href="https://loop.frontiersin.org/people/2967951/overview" target="_blank">Frontiers</a>, <a href="https://arxiv.org/search/cs?searchtype=author&query=Kingston,+Phillip" target="_blank">arXiv</a>, <a href="https://www.semanticscholar.org/author/Phillip-Kingston/2333356304" target="_blank">Semantic Scholar</a>, <a href="https://phillipkingston.github.io" target="_blank">GitHub Profile</a>, <a href="https://huggingface.co/PhillipKingston" target="_blank">HuggingFace</a>, <a href="https://www.linkedin.com/in/phillipkingston/" target="_blank">LinkedIn</a>, <a href="https://x.com/phillipkingston" target="_blank">X / Twitter</a>, <a href="https://github.com/phillipkingston" target="_blank">GitHub</a>.
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Phillip Kingston. All rights reserved.</p>
+    </footer>
+</body>
+</html>

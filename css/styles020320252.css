@@ -1,0 +1,4 @@
+body { text-align: center; }
+main { margin: 0px auto; text-align: left; width: 90%; padding: 0px 8px; max-width: 700px; }
+h1#heading { margin-bottom: 3px; }
+p.small { font-size: 0.7em; margin-top: 0px }
