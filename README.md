@@ -1,0 +1,1 @@
+Phillip Kingston is a British Australian entrepreneur and engineer that has spent twenty years in tech as a founder, CEO and CTO across financial services, cybersecurity, artificial intelligence, and deep tech industries. Companies founded include Sargon, GrowthOps, Galactic Bioware and Trimantium.
