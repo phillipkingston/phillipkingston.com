@@ -1,33 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Phillip Kingston - Engineer & Entrepreneur</title>
+    <title>Phillip Kingston - Engineer &amp; Entrepreneur</title>
     <meta name="description" content="Phillip Kingston is a British Australian entrepreneur and engineer that has spent twenty years in tech as a founder, CEO and CTO across financial services, cybersecurity, artificial intelligence, and deep tech industries. Companies founded include Sargon, GrowthOps, Galactic Bioware and Trimantium">
     <meta name="keywords" content="Phillip Kingston, Phil Kingston, AppliedAI, Opus, Machine Learning, National University Kyiv Aviation Institute, Sargon, Trimantium, GrowthOps">
     <meta name="author" content="Phillip Kingston">
     <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#12110f" media="(prefers-color-scheme: dark)">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Phillip Kingston - Engineer & Entrepreneur">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Phillip Kingston - Engineer &amp; Entrepreneur">
     <meta property="og:description" content="Phillip Kingston is a British Australian entrepreneur and engineer that has spent twenty years in tech as a founder, CEO and CTO across financial services, cybersecurity, artificial intelligence, and deep tech industries. Companies founded include Sargon, GrowthOps, Galactic Bioware and Trimantium">
     <meta property="og:image" content="https://www.phillipkingston.com/img/og-Meta-Image-1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Phillip Kingston - Engineer and Entrepreneur">
     <meta property="og:url" content="https://www.phillipkingston.com/">
-    <meta property="og:site_name" content="Phillip Kingston - Engineer & Entrepreneur">
+    <meta property="og:site_name" content="Phillip Kingston - Engineer &amp; Entrepreneur">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Phillip Kingston - Engineer & Entrepreneur">
+    <meta name="twitter:title" content="Phillip Kingston - Engineer &amp; Entrepreneur">
     <meta name="twitter:description" content="Phillip Kingston is a British Australian entrepreneur and engineer that has spent twenty years in tech as a founder, CEO and CTO across financial services, cybersecurity, artificial intelligence, and deep tech industries. Companies founded include Sargon, GrowthOps, Galactic Bioware and Trimantium">
     <meta name="twitter:image" content="https://www.phillipkingston.com/img/Twitter-Image-1200x630.png">
+    <meta name="twitter:image:alt" content="Phillip Kingston - Engineer and Entrepreneur">
     <meta name="twitter:site" content="@phillipkingston">
     <meta name="twitter:creator" content="@phillipkingston">
+
     <link rel="icon" href="/img/phillipkingston.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/img/Apple-Touch-180x180.png">
     <link rel="canonical" href="https://www.phillipkingston.com/">
-    <link rel="stylesheet" href="css/styles020320252.css">
+    <link rel="preload" href="/fonts/newsreader-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/styles220820261.css">
+
+    <script>
+    /* Apply the stored theme before first paint to avoid a flash. */
+    try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MK66YC5XJ"></script>
     <script>
@@ -39,86 +56,430 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1 id="heading">Phillip Kingston</h1>
-        <p class="small"><a href="https://orcid.org/0009-0005-2256-3079">ORCID: 0009-0005-2256-3079</a>&nbsp;|&nbsp;<a href="https://www.scopus.com/pages/authors/60114263600">Scopus: 60114263600</a></p>
-    </header>
-    
-    <main>
-        <p>Phillip Kingston is a Visiting Professor at State University Kyiv Aviation Institute, Kyiv, Ukraine and a Member of Technical Staff at AppliedAI in Abu Dhabi, United Arab Emirates.</p>
-        Phillip Kingston&#39;s recent research advances AI-driven workflow automation in complex business environments and, more recently, extends into safety-critical autonomous control. His work addresses the end-to-end generation of complex workflows &#8211; from formalizing the intent behind a process to optimizing and rigorously evaluating its execution &#8211; with an emphasis on incorporating domain knowledge and multimodal data. A parallel line of work brings the same optimization-under-constraint thinking to physical systems, fusing physical chemistry with neural control to deliver autonomous life support in extreme environments, underpinned by formal guarantees on control behaviour. The following are the main technical areas of his contributions:
-        <h3>Workflow Automation and Optimization</h3>
-        <ul>
-            <li><b>AI-Driven Workflow Generation:</b> Kingston develops frameworks for automatically generating workflows in complex Business Process Outsourcing (BPO) scenarios, aiming to reduce costs and improve quality. These workflows model business processes as sequences of tasks that transform a given input into a desired output while respecting operational constraints.
-            <li><b>Task Decomposition with DAGs:</b> He represents workflows as Directed Acyclic Graphs (DAGs), where each node is a task and edges define execution flow​. Each task consists of executable instructions (e.g. code, tool usage) and may include human expert review steps to ensure quality​. This task-based decomposition provides a structured blueprint of complex processes.
-            <li><b>Two-Phase Generation & Optimization:</b> Kingston&#39;s approach uses a two-phase methodology for workflow creation​. In the generation phase, a Large Work Model (LWM) &#8211; a specialized AI model &#8211; produces candidate workflows from a high-level intention, leveraging domain knowledge. In the optimization phase, the candidate workflows are converted into a Workflow Graph, and path-finding algorithms then select an optimal workflow (from input to output) via path optimization techniques​. This ensures the chosen workflow is both feasible and cost-effective.
-        </ul>
-        <h3>Formalization of Workflow Intention and Business Artefacts</h3>
-        <ul>
-            <li><b>Defining Workflow Signal and Intention:</b> Kingston introduces formal concepts to capture the goal of a process. Workflow Intention is defined as the alignment of the Input, Process, and Output elements that describe a workflow&#39;s objective​. This intention is interpreted from &#8220;Workflow Signals&#8221; embedded in business artefacts (documents, data) &#8211; essentially, clues in the artefacts that indicate what input-process-output triple is needed​.
-            <li><b>Mathematical Representation:</b> He provides a mathematical framework for these concepts, representing a Workflow Signal as a vector and a Workflow Intention as a tensor​. By formalizing the intention as a tensor (a structured data object), the workflow&#39;s components and their relationships can be encoded in a machine-interpretable way. This rigorous representation helps ensure that AI models can accurately capture the structure and requirements of a workflow.
-            <li><b>Modular and Structured Workflow Modeling:</b> Kingston&#39;s framework is implemented via a modular, trainable attention-based system that can ingest business artefacts and infer the workflow intention​. The architecture is designed in separable modules (e.g. per data modality, see next section) for scalability. Furthermore, it leverages structured knowledge sources like a Work Knowledge Graph (WKG) to incorporate domain-specific procedural knowledge into the workflow model​. By combining formal intention modeling with knowledge graphs, his approach grounds workflow generation in both data-driven signals and established business rules.
-        </ul>
-        
-        <h3>Multimodal AI and Attention-Based Processing</h3>
-        <ul>
-            <li><b>Transformer Models for Diverse Data:</b> Kingston&#39;s work leverages transformer architectures (with encoder-decoder designs) to extract information from both structured and unstructured data sources, such as text, images, and documents. For example, textual data is tokenized and processed with attention mechanisms to capture semantics, while image data is processed via OCR and convolutional encoders to extract visual features​. These encoded representations are brought into a common high-dimensional space, enabling the system to handle multimodal inputs (e.g. mixing text and image content) in a unified manner.
-            <li><b>Attention-Based Multimodal Generation:</b> He has developed an attention-driven multimodal generative system that reads business artefacts (e.g. forms, documents, images) and infers the underlying workflow intention​. In this system, modality-specific encoders first handle each input type (text, image, etc.), and then intra-modality attention and fusion attention mechanisms combine information across modalities. An Intention Decoder network uses these attended features to produce the workflow intention (the triple of Input&#8211;Process&#8211;Output) that best explains the artefacts. This end-to-end design allows the AI to interpret complex business documents and derive the corresponding process they imply.
-            <li><b>Vision Transformers & Multimodal Integration:</b> Kingston also incorporates state-of-the-art vision transformer (ViT) techniques and multimodal learning paradigms to integrate visual and textual information. Vision transformers treat image patches like tokens and apply self-attention, capturing both local and global image features without traditional convolution​. His framework leverages such architectures to process image-based artefacts (like scanned documents) alongside text​. Moreover, he draws on advanced multimodal transformers (e.g. models that fuse text and vision embeddings) to ensure the AI can reason across modalities. These approaches serve as the backbone for ingesting diverse Business Artefacts and constructing a contextual understanding from them, which is crucial for generating accurate workflows​.
-        </ul>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"><i></i></div>
 
-        <h3>Graph-Based Knowledge Integration</h3>
-        <ul>
-            <li><b>Work Knowledge Graph (WKG):</b> A central element of Kingston&#39;s research is the use of knowledge graphs to inject domain and procedural knowledge into the workflow generation process. He helps construct a Work Knowledge Graph, which encodes known workflows, tasks, and their relationships gathered from various industries​. This graph acts as a knowledge base of how different tasks connect and what processes are valid, capturing business rules and best practices in a structured form.
-            <li><b>Graph Neural Networks for Retrieval:</b> To utilize the WKG during workflow generation, Kingston employs Graph Attention Networks (GATs) and similar graph neural network techniques. For instance, one approach involves training a GAT over the WKG so that it can suggest related workflow nodes (tasks) that should be included in a partially generated workflow​. The GAT allows the system to retrieve relevant graph nodes by having tasks &#8220;attend&#8221; to neighbors&#39; features, effectively finding procedural steps in the knowledge graph that align with the current workflow context. This integration ensures that the AI-generated workflow is informed by known valid processes.
-            <li><b>Retrieval-Augmented Workflow Generation:</b> His methodology can be seen as a form of retrieval-augmented generation, where the AI first queries the knowledge graph for pertinent information and then uses that to guide workflow creation. Concretely, the system compares the encoded workflow intention to nodes in the WKG (using embedding similarity measures) and selects a subset of relevant nodes from the graph​. Those retrieved graph elements (tasks or sub-workflows) are provided to the LWM model as additional context, so the model generates a workflow that is consistent with domain knowledge. By augmenting the generative model with knowledge graph retrieval, Kingston&#39;s approach increases the accuracy and compliance of the resulting workflows with real-world procedures​.
-        </ul>
-        <h3>Optimization Techniques for AI-Driven Workflows</h3>
-        <ul>
-            <li><b>Cost Modeling for Workflows:</b> To choose the best workflow among many possibilities, Kingston integrates a cost modeling approach into workflow optimization. Each candidate workflow (or path in the workflow graph) is evaluated with a cost function that accounts for multiple factors: computational expense, processing time, and any model/tool usage costs​. He uses a weighted linear combination of these factors to assign a total cost to a given workflow path​. By quantitatively modeling resource and time constraints, the system can objectively compare workflows not just on feasibility, but on efficiency.
-            <li><b>Graph Search and RL for Optimal Paths:</b> For selecting the optimal execution path through the Workflow Graph, Kingston applies classic graph search algorithms and explores learning-based methods. In practice, his implementation uses a modified Dijkstra&#39;s algorithm to find the least-cost path from the input node to the output node, adapting the algorithm to consider node-associated costs (tasks costs) instead of just edge weights​. Additionally, his research acknowledges and considers reinforcement learning (RL) strategies for workflow optimization, especially for complex or dynamic scenarios​. While the current system iteration emphasizes graph algorithms due to the complexity of the action space in workflows, RL is examined as a potential approach for agents to learn optimal task sequencing in richly-defined environments​.
-            <li><b>Evaluation and Benchmarking:</b> Kingston places importance on evaluating AI-generated workflows against real-world standards. He has helped develop benchmarks in an industry context &#8211; for example, testing their Opus system on a medical coding workflow and demonstrating that the specialized models significantly outperform general Large Language Models (LLMs) (by 29&#8211;38% in workflow generation accuracy for that use case)​. Beyond accuracy, his work advocates for comprehensive metrics that include efficiency and compliance. In other words, a workflow is assessed not only on correctness, but also on execution time, resource consumption, and adherence to business rules​. This holistic evaluation framework ensures that the AI-driven workflows are practical and reliable for deployment in enterprise settings, bridging the gap between AI-generated plans and real operational constraints.
-        </ul>
-        <h3>Quantitative Workflow Evaluation</h3>
-        <ul>
-            <li><b>Probabilistic Workflow Reward:</b> Building on his optimization work, Kingston formalizes a quantitative framework for judging how good a workflow actually is. The Opus Workflow Reward models expected performance as a probabilistic quantity that jointly accounts for the probability of success, the resources a workflow consumes, and the quality of its output​. This unifies correctness, reliability, and cost within a single coherent mathematical model, so that competing workflows can be compared and ranked on a common scale rather than by feasibility alone.
-            <li><b>Normative Structural Penalties:</b> Alongside reward, he defines Opus Workflow Normative Penalties &#8211; measurable functions that assess the structural and informational quality of a workflow across four dimensions: Cohesion, Coupling, Observability, and Information Hygiene​. These penalties capture qualities that raw success metrics miss, rewarding workflows that are well-factored, loosely coupled, transparent to monitor, and disciplined in how they handle information.
-            <li><b>Joint Optimization and RL Integration:</b> By combining the reward with the normative penalties, Kingston&#39;s framework supports joint optimization that balances the reward&#8211;penalty trade-off, enabling automated assessment, ranking, and selection of workflows under multiple quality constraints​. Because the evaluation is fully quantitative, it can serve as a reward signal for reinforcement learning systems that discover and refine workflows automatically, closing the loop between generation, optimization, and principled evaluation.
-        </ul>
-        <h3>Safety-Critical Autonomous Control and Life Support</h3>
-        <ul>
-            <li><b>Physicochemical-Neural Fusion:</b> Extending his optimization-under-constraint approach from digital workflows to physical systems, Kingston co-develops an AI-controlled life support system for firefighting suits that fuses first-principles physical chemistry with neural control​. The physical layer models a semi-closed-circuit breathing apparatus &#8211; carbon dioxide scrubbing with soda lime, humidity control via silica gel, and oxygen replenishment &#8211; with explicit oxygen-safety margins and toxicity thresholds, captured in an 18-state nonlinear model kept tractable enough for real equipment.
-            <li><b>Layered Control with Safety Guarantees:</b> On top of this physical model, he designs a multi-layered control architecture combining environmental and internal-atmosphere sensing (with triple-redundant oxygen measurement), model-predictive control for dynamic resource optimization, and reinforcement learning for policy suggestions, all validated by a safety filter built on control-barrier functions that vets every command before it is issued​. In simulation this integrated approach delivers an 18&#8211;34% endurance improvement over PID baselines while holding tighter physiological and fire-safety margins.
-            <li><b>Exact Viability and Gas Allocation:</b> Kingston derives the exact conditions under which a breathable atmosphere can be sustained in a capacity-limited, venting two-gas system, characterizing the viable region of operation and the optimal allocation of the two gases under finite storage and venting constraints. Rather than relying on conservative heuristics, this analysis pins down the precise feasibility boundary and the corresponding allocation strategy, giving formal guarantees on when life support can be maintained and how limited gas reserves should be apportioned to maximize safe endurance.
-        </ul>
-        <h3>Discrete Event Systems and Supervisory Control</h3>
-        <ul>
-            <li><b>Branch-Set Preservation under Fixed Actuator Interfaces:</b> Kingston studies the mathematical conditions under which a supervisory controller can be reshaped without changing what it can physically do. Through the notion of equality-support covers, he establishes when the exact set of reachable branches &#8211; the admissible control paths &#8211; is preserved under a fixed actuator interface​. These results give formal, provable guarantees that safety-preserving reformulations of a control policy leave its true operational envelope intact, a foundation for trustworthy autonomy in life-critical settings.
-            <li><b>History-Dependent Veto Authority:</b> Working in the decentralized setting &#8211; where several local supervisors, each with only partial observations, must jointly decide whether to permit an event &#8211; Kingston formalizes control in which the authority to veto (disable) an event varies with the hidden execution history and may itself be concealed from the supervisors. This history-dependent veto model captures delegated and revocable control architectures, separating a command&#39;s behavioural effect from its issuer&#39;s permission to issue it, and gives a precise language for the state-dependent authority constraints that arise in real actuator and safety-filter interfaces.
-            <li><b>Exact Realization and Supremal Synthesis:</b> He proves that a specification is realizable exactly if and only if it is controllable and &#8220;legitimately co-observable&#8221; &#8211; each forbidden action must have a single supervisor that both knows the action is required and is authorized to veto it across an entire information cell &#8211; and shows via a minimal obstruction that decision knowledge and authority knowledge held by different supervisors do not compose​. For behaviour beyond exact realization, he extends relative co-observability to construct the supremal (largest) safe sublanguage under hidden, history-dependent authority, yielding an exact finite synthesis procedure and formal guarantees on which behaviours a controller can attain.
-        </ul>
-        <p>Overall, Phillip Kingston&#39;s research contributions center on bridging AI with operational business processes &#8211; formalizing the concept of a workflow intention, harnessing multimodal data through advanced neural architectures, injecting knowledge via graphs, and optimizing the results for real-world efficiency. His work provides a pathway to transform high-level process requirements into executable, optimized workflows that maintain compliance with domain knowledge and performance criteria. More recently, he has extended these ideas beyond digital workflows &#8211; developing quantitative, probabilistic frameworks for evaluating workflow quality and carrying the same optimization-under-constraint and formal-guarantee thinking into safety-critical autonomous control, where physics-grounded models and neural controllers cooperate to deliver reliable life support in extreme environments.</p>
-        <h3>Papers:</h3>
+    <div class="shell">
+        <header class="masthead">
+            <div class="masthead__grid">
+                <div class="masthead__text">
+                    <p class="eyebrow">Engineer &amp; Entrepreneur</p>
+                    <h1>Phillip Kingston</h1>
+                    <p class="lede">Phillip Kingston is a Visiting Professor at National University Kyiv Aviation Institute, Kyiv, Ukraine and a Member of Technical Staff at AppliedAI in Abu Dhabi, United Arab Emirates.</p>
+                    <ul class="ids">
+                        <li><a href="https://orcid.org/0009-0005-2256-3079" target="_blank" rel="noopener"><b>ORCID</b> 0009-0005-2256-3079</a></li>
+                        <li><a href="https://www.scopus.com/pages/authors/60114263600" target="_blank" rel="noopener"><b>Scopus</b> 60114263600</a></li>
+                    </ul>
+                </div>
+                <figure class="portrait">
+                    <img src="/img/Apple-Touch-180x180.png" width="180" height="180" alt="Portrait of Phillip Kingston">
+                </figure>
+            </div>
+        </header>
 
-        <ul>
-            <li><a href="/pdf/Opus-A-Large-Work-Model-for-Complex-Workflow-Generation.pdf">Opus &#8211; A Large Work Model for Complex Workflow Generation (November 2024)</a>
-            <li><a href="/pdf/Opus-A-Workflow-Intention-Framework-for-Complex-Workflow-Generation.pdf">Opus &#8211; A Workflow Intention Framework for Complex Workflow Generation (January 2025)</a>
-            <li><a href="/pdf/Opus-A-Prompt-Intention-Framework-for-Complex-Workflow-Generation.pdf">Opus &#8211; A Prompt Intention Framework for Complex Workﬂow Generation (June 2025)</a>
-            <li><a href="/pdf/Decoding-manipulative-narratives-in-cognitive-warfare.pdf" target="_blank">Decoding Manipulative Narratives in Cognitive Warfare (September 2025)</a>
-            <li><a href="/pdf/Opus-A-Quantitative-Framework-for-Workflow Evaluation.pdf" target="_blank">Opus &#8211; A Quantitative Framework for Workflow Evaluation (November 2025)</a>
-            <li><a href="/pdf/Physicochemical-Neural Fusion-for-Semi-Closed-Circuit-Respiratory-Autonomy-in-Extreme-Environments.pdf" target="_blank">Physicochemical-Neural Fusion for Semi-Closed-Circuit Respiratory Autonomy in Extreme Environments (March 2026)</a>
-            <li><a href="/pdf/Equality-Support-Covers-for-Exact-Branch-Set-Preservation-under-Fixed-Actuator-Interfaces.pdf" target="_blank">Equality-Support Covers for Exact Branch-Set Preservation under Fixed Actuator Interfaces (July 2026)</a>
-            <li><a href="/pdf/Exact-Realization-and-Supremal-Synthesis-under-History-Dependent-Veto-Authority.pdf" target="_blank">Exact Realization and Supremal Synthesis under History-Dependent Veto Authority (August 2026)</a>
-            <li><a href="/pdf/Exact-Viability-and-Gas-Allocation-in-a-Capacity-Limited-Venting-Two-Gas-Atmosphere.pdf" target="_blank">Exact Viability and Gas Allocation in a Capacity-Limited Venting Two-Gas Atmosphere (August 2026)</a>
-        </ul>
-       
+        <div class="layout">
+            <nav class="rail" aria-label="Contents">
+                <p class="rail__title">Contents</p>
+                <ol class="rail__list">
+                    <li><a href="#automation"><span class="num">01</span> <span>Automation &amp; Optimization</span></a></li>
+                    <li><a href="#formalization"><span class="num">02</span> <span>Formalization</span></a></li>
+                    <li><a href="#multimodal"><span class="num">03</span> <span>Multimodal AI</span></a></li>
+                    <li><a href="#knowledge-graphs"><span class="num">04</span> <span>Graph Theory</span></a></li>
+                    <li><a href="#optimization"><span class="num">05</span> <span>Optimization</span></a></li>
+                    <li><a href="#evaluation"><span class="num">06</span> <span>Evaluation</span></a></li>
+                    <li><a href="#life-support"><span class="num">07</span> <span>Life Support</span></a></li>
+                    <li><a href="#supervisory-control"><span class="num">08</span> <span>Supervisory Control</span></a></li>
+                    <li><a href="#papers"><span class="num">&#8212;</span> <span>Papers</span></a></li>
+                    <li><a href="#connect"><span class="num">&#8212;</span> <span>Connect</span></a></li>
+                </ol>
+                <button class="theme" type="button" id="theme-toggle" hidden>
+                    Theme: <span id="theme-label">Auto</span>
+                </button>
+            </nav>
 
-        <h3>Connect:</h3>
-         &#8226; <a href="https://phillipkingston.link/" target="_blank">Gravatar</a> &#8226; <a href="https://scholar.google.com/citations?user=jMYmIFkAAAAJ&hl=en&authuser=1&oi=ao" target="_blank">Google Scholar</a> &#8226; <a href="https://loop.frontiersin.org/people/2967951/overview" target="_blank">Frontiers</a> &#8226; <a href="https://arxiv.org/search/cs?searchtype=author&query=Kingston,+Phillip" target="_blank">arXiv</a> &#8226; <a href="https://www.semanticscholar.org/author/Phillip-Kingston/2333356304" target="_blank">Semantic Scholar</a> &#8226; <a href="https://phillipkingston.github.io" target="_blank">GitHub Profile</a> &#8226; <a href="https://huggingface.co/PhillipKingston" target="_blank">HuggingFace</a> &#8226; <a href="https://www.linkedin.com/in/phillipkingston/" target="_blank">LinkedIn</a> &#8226; <a href="https://x.com/phillipkingston" target="_blank">X / Twitter</a> &#8226; <a href="https://github.com/phillipkingston" target="_blank">GitHub</a> &#8226; <a href="https://orcid.org/0009-0005-2256-3079" target="_blank">ORCID</a> &#8226; <a href="https://phillipkingston.faculty.bio" target="_blank">Faculty Bio</a> &#8226; <a href="https://about.me/phillipkingston" target="_blank">About Me</a> &#8226; <a href="https://linktr.ee/phillipkingston" target="_blank">Linktree</a> &#8226; <a href="https://phillipkingston.owlstown.net/" target="_blank">Owlstown</a> &#8226; <a href="https://dblp.org/pid/394/5346.html" target="_blank">DBLP</a> &#8226; <a href="https://www.youtube.com/@phillipkingston-ai" target="_blank">YouTube</a> &#8226; <a href="https://www.galacticbioware.com" target="_blank">Galactic Bioware</a> &#8226; <a href="https://www.crunchbase.com/people/phillip-kingston" target="_blank">Crunchbase</a> &#8226; <a href="https://bsky.app/profile/phillipkingston.bsky.social" target="_blank">Bluesky</a> &#8226; <a href="https://www.scopus.com/pages/authors/60114263600" target="_blank">Scopus</a> &#8226; <a href="https://nau-ua.academia.edu/PhillipKingston" target="_blank">Academia.edu</a> &#8226; 
-    </main>
+            <main id="main">
+                <section class="overview">
+                    <p class="eyebrow">Overview</p>
+                    <p class="lede lede--wide">Phillip Kingston&#39;s recent research advances AI-driven workflow automation in complex business environments and, more recently, extends into safety-critical autonomous control. His work addresses the end-to-end generation of complex workflows &#8211; from formalizing the intent behind a process to optimizing and rigorously evaluating its execution &#8211; with an emphasis on incorporating domain knowledge and multimodal data. A parallel line of work brings the same optimization-under-constraint thinking to physical systems, fusing physical chemistry with neural control to deliver autonomous life support in extreme environments, underpinned by formal guarantees on control behaviour. The following are the main technical areas of his contributions:</p>
+                </section>
 
-    <footer>
-        <p>&copy; 2026 Phillip Kingston. All rights reserved.</p>
-    </footer>
+                <section class="section" id="automation" aria-labelledby="automation-h">
+                    <div class="section__head">
+                        <p class="section__num">01</p>
+                        <h2 id="automation-h">Workflow Automation and Optimization</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>AI-Driven Workflow Generation</h3></div>
+                            <div class="claim__body"><p>Kingston develops frameworks for automatically generating workflows in complex Business Process Outsourcing (BPO) scenarios, aiming to reduce costs and improve quality. These workflows model business processes as sequences of tasks that transform a given input into a desired output while respecting operational constraints.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Task Decomposition with DAGs</h3></div>
+                            <div class="claim__body"><p>He represents workflows as Directed Acyclic Graphs (DAGs), where each node is a task and edges define execution flow&#8203;. Each task consists of executable instructions (e.g. code, tool usage) and may include human expert review steps to ensure quality&#8203;. This task-based decomposition provides a structured blueprint of complex processes.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Two-Phase Generation &amp; Optimization</h3></div>
+                            <div class="claim__body"><p>Kingston&#39;s approach uses a two-phase methodology for workflow creation&#8203;. In the generation phase, a Large Work Model (LWM) &#8211; a specialized AI model &#8211; produces candidate workflows from a high-level intention, leveraging domain knowledge. In the optimization phase, the candidate workflows are converted into a Workflow Graph, and path-finding algorithms then select an optimal workflow (from input to output) via path optimization techniques&#8203;. This ensures the chosen workflow is both feasible and cost-effective.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="formalization" aria-labelledby="formalization-h">
+                    <div class="section__head">
+                        <p class="section__num">02</p>
+                        <h2 id="formalization-h">Formalization of Workflow Intention and Business Artefacts</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>Defining Workflow Signal and Intention</h3></div>
+                            <div class="claim__body"><p>Kingston introduces formal concepts to capture the goal of a process. Workflow Intention is defined as the alignment of the Input, Process, and Output elements that describe a workflow&#39;s objective&#8203;. This intention is interpreted from &#8220;Workflow Signals&#8221; embedded in business artefacts (documents, data) &#8211; essentially, clues in the artefacts that indicate what input-process-output triple is needed&#8203;.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Mathematical Representation</h3></div>
+                            <div class="claim__body"><p>He provides a mathematical framework for these concepts, representing a Workflow Signal as a vector and a Workflow Intention as a tensor&#8203;. By formalizing the intention as a tensor (a structured data object), the workflow&#39;s components and their relationships can be encoded in a machine-interpretable way. This rigorous representation helps ensure that AI models can accurately capture the structure and requirements of a workflow.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Modular and Structured Workflow Modeling</h3></div>
+                            <div class="claim__body"><p>Kingston&#39;s framework is implemented via a modular, trainable attention-based system that can ingest business artefacts and infer the workflow intention&#8203;. The architecture is designed in separable modules (e.g. per data modality, see next section) for scalability. Furthermore, it leverages structured knowledge sources like a Work Knowledge Graph (WKG) to incorporate domain-specific procedural knowledge into the workflow model&#8203;. By combining formal intention modeling with knowledge graphs, his approach grounds workflow generation in both data-driven signals and established business rules.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="multimodal" aria-labelledby="multimodal-h">
+                    <div class="section__head">
+                        <p class="section__num">03</p>
+                        <h2 id="multimodal-h">Multimodal AI and Attention-Based Processing</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>Transformer Models for Diverse Data</h3></div>
+                            <div class="claim__body"><p>Kingston&#39;s work leverages transformer architectures (with encoder-decoder designs) to extract information from both structured and unstructured data sources, such as text, images, and documents. For example, textual data is tokenized and processed with attention mechanisms to capture semantics, while image data is processed via OCR and convolutional encoders to extract visual features&#8203;. These encoded representations are brought into a common high-dimensional space, enabling the system to handle multimodal inputs (e.g. mixing text and image content) in a unified manner.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Attention-Based Multimodal Generation</h3></div>
+                            <div class="claim__body"><p>He has developed an attention-driven multimodal generative system that reads business artefacts (e.g. forms, documents, images) and infers the underlying workflow intention&#8203;. In this system, modality-specific encoders first handle each input type (text, image, etc.), and then intra-modality attention and fusion attention mechanisms combine information across modalities. An Intention Decoder network uses these attended features to produce the workflow intention (the triple of Input&#8211;Process&#8211;Output) that best explains the artefacts. This end-to-end design allows the AI to interpret complex business documents and derive the corresponding process they imply.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Vision Transformers &amp; Multimodal Integration</h3></div>
+                            <div class="claim__body"><p>Kingston also incorporates state-of-the-art vision transformer (ViT) techniques and multimodal learning paradigms to integrate visual and textual information. Vision transformers treat image patches like tokens and apply self-attention, capturing both local and global image features without traditional convolution&#8203;. His framework leverages such architectures to process image-based artefacts (like scanned documents) alongside text&#8203;. Moreover, he draws on advanced multimodal transformers (e.g. models that fuse text and vision embeddings) to ensure the AI can reason across modalities. These approaches serve as the backbone for ingesting diverse Business Artefacts and constructing a contextual understanding from them, which is crucial for generating accurate workflows&#8203;.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="knowledge-graphs" aria-labelledby="knowledge-graphs-h">
+                    <div class="section__head">
+                        <p class="section__num">04</p>
+                        <h2 id="knowledge-graphs-h">Graph-Based Knowledge Integration</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>Work Knowledge Graph (WKG)</h3></div>
+                            <div class="claim__body"><p>A central element of Kingston&#39;s research is the use of knowledge graphs to inject domain and procedural knowledge into the workflow generation process. He helps construct a Work Knowledge Graph, which encodes known workflows, tasks, and their relationships gathered from various industries&#8203;. This graph acts as a knowledge base of how different tasks connect and what processes are valid, capturing business rules and best practices in a structured form.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Graph Neural Networks for Retrieval</h3></div>
+                            <div class="claim__body"><p>To utilize the WKG during workflow generation, Kingston employs Graph Attention Networks (GATs) and similar graph neural network techniques. For instance, one approach involves training a GAT over the WKG so that it can suggest related workflow nodes (tasks) that should be included in a partially generated workflow&#8203;. The GAT allows the system to retrieve relevant graph nodes by having tasks &#8220;attend&#8221; to neighbors&#39; features, effectively finding procedural steps in the knowledge graph that align with the current workflow context. This integration ensures that the AI-generated workflow is informed by known valid processes.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Retrieval-Augmented Workflow Generation</h3></div>
+                            <div class="claim__body"><p>His methodology can be seen as a form of retrieval-augmented generation, where the AI first queries the knowledge graph for pertinent information and then uses that to guide workflow creation. Concretely, the system compares the encoded workflow intention to nodes in the WKG (using embedding similarity measures) and selects a subset of relevant nodes from the graph&#8203;. Those retrieved graph elements (tasks or sub-workflows) are provided to the LWM model as additional context, so the model generates a workflow that is consistent with domain knowledge. By augmenting the generative model with knowledge graph retrieval, Kingston&#39;s approach increases the accuracy and compliance of the resulting workflows with real-world procedures&#8203;.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="optimization" aria-labelledby="optimization-h">
+                    <div class="section__head">
+                        <p class="section__num">05</p>
+                        <h2 id="optimization-h">Optimization Techniques for AI-Driven Workflows</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>Cost Modeling for Workflows</h3></div>
+                            <div class="claim__body"><p>To choose the best workflow among many possibilities, Kingston integrates a cost modeling approach into workflow optimization. Each candidate workflow (or path in the workflow graph) is evaluated with a cost function that accounts for multiple factors: computational expense, processing time, and any model/tool usage costs&#8203;. He uses a weighted linear combination of these factors to assign a total cost to a given workflow path&#8203;. By quantitatively modeling resource and time constraints, the system can objectively compare workflows not just on feasibility, but on efficiency.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Graph Search and RL for Optimal Paths</h3></div>
+                            <div class="claim__body"><p>For selecting the optimal execution path through the Workflow Graph, Kingston applies classic graph search algorithms and explores learning-based methods. In practice, his implementation uses a modified Dijkstra&#39;s algorithm to find the least-cost path from the input node to the output node, adapting the algorithm to consider node-associated costs (tasks costs) instead of just edge weights&#8203;. Additionally, his research acknowledges and considers reinforcement learning (RL) strategies for workflow optimization, especially for complex or dynamic scenarios&#8203;. While the current system iteration emphasizes graph algorithms due to the complexity of the action space in workflows, RL is examined as a potential approach for agents to learn optimal task sequencing in richly-defined environments&#8203;.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head">
+                                <h3>Evaluation and Benchmarking</h3>
+                                <p class="stat">
+                                    <span class="stat__fig">29&#8211;38%</span>
+                                    <span class="stat__label">higher workflow generation accuracy than general LLMs, on a medical coding workflow</span>
+                                </p>
+                            </div>
+                            <div class="claim__body"><p>Kingston places importance on evaluating AI-generated workflows against real-world standards. He has helped develop benchmarks in an industry context &#8211; for example, testing their Opus system on a medical coding workflow and demonstrating that the specialized models significantly outperform general Large Language Models (LLMs) (by 29&#8211;38% in workflow generation accuracy for that use case)&#8203;. Beyond accuracy, his work advocates for comprehensive metrics that include efficiency and compliance. In other words, a workflow is assessed not only on correctness, but also on execution time, resource consumption, and adherence to business rules&#8203;. This holistic evaluation framework ensures that the AI-driven workflows are practical and reliable for deployment in enterprise settings, bridging the gap between AI-generated plans and real operational constraints.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="evaluation" aria-labelledby="evaluation-h">
+                    <div class="section__head">
+                        <p class="section__num">06</p>
+                        <h2 id="evaluation-h">Quantitative Workflow Evaluation</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>Probabilistic Workflow Reward</h3></div>
+                            <div class="claim__body"><p>Building on his optimization work, Kingston formalizes a quantitative framework for judging how good a workflow actually is. The Opus Workflow Reward models expected performance as a probabilistic quantity that jointly accounts for the probability of success, the resources a workflow consumes, and the quality of its output&#8203;. This unifies correctness, reliability, and cost within a single coherent mathematical model, so that competing workflows can be compared and ranked on a common scale rather than by feasibility alone.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head">
+                                <h3>Normative Structural Penalties</h3>
+                                <p class="stat">
+                                    <span class="stat__fig">4 dimensions</span>
+                                    <span class="stat__label">Cohesion, Coupling, Observability and Information Hygiene</span>
+                                </p>
+                            </div>
+                            <div class="claim__body"><p>Alongside reward, he defines Opus Workflow Normative Penalties &#8211; measurable functions that assess the structural and informational quality of a workflow across four dimensions: Cohesion, Coupling, Observability, and Information Hygiene&#8203;. These penalties capture qualities that raw success metrics miss, rewarding workflows that are well-factored, loosely coupled, transparent to monitor, and disciplined in how they handle information.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Joint Optimization and RL Integration</h3></div>
+                            <div class="claim__body"><p>By combining the reward with the normative penalties, Kingston&#39;s framework supports joint optimization that balances the reward&#8211;penalty trade-off, enabling automated assessment, ranking, and selection of workflows under multiple quality constraints&#8203;. Because the evaluation is fully quantitative, it can serve as a reward signal for reinforcement learning systems that discover and refine workflows automatically, closing the loop between generation, optimization, and principled evaluation.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="life-support" aria-labelledby="life-support-h">
+                    <div class="section__head">
+                        <p class="section__num">07</p>
+                        <h2 id="life-support-h">Safety-Critical Autonomous Control and Life Support</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head">
+                                <h3>Physicochemical-Neural Fusion</h3>
+                                <p class="stat">
+                                    <span class="stat__fig">18-state</span>
+                                    <span class="stat__label">nonlinear model of a semi-closed-circuit breathing apparatus, kept tractable for real equipment</span>
+                                </p>
+                            </div>
+                            <div class="claim__body"><p>Extending his optimization-under-constraint approach from digital workflows to physical systems, Kingston co-develops an AI-controlled life support system for firefighting suits that fuses first-principles physical chemistry with neural control&#8203;. The physical layer models a semi-closed-circuit breathing apparatus &#8211; carbon dioxide scrubbing with soda lime, humidity control via silica gel, and oxygen replenishment &#8211; with explicit oxygen-safety margins and toxicity thresholds, captured in an 18-state nonlinear model kept tractable enough for real equipment.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head">
+                                <h3>Layered Control with Safety Guarantees</h3>
+                                <p class="stat">
+                                    <span class="stat__fig">18&#8211;34%</span>
+                                    <span class="stat__label">endurance improvement over PID baselines in simulation, at tighter safety margins</span>
+                                </p>
+                            </div>
+                            <div class="claim__body"><p>On top of this physical model, he designs a multi-layered control architecture combining environmental and internal-atmosphere sensing (with triple-redundant oxygen measurement), model-predictive control for dynamic resource optimization, and reinforcement learning for policy suggestions, all validated by a safety filter built on control-barrier functions that vets every command before it is issued&#8203;. In simulation this integrated approach delivers an 18&#8211;34% endurance improvement over PID baselines while holding tighter physiological and fire-safety margins.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Exact Viability and Gas Allocation</h3></div>
+                            <div class="claim__body"><p>Kingston derives the exact conditions under which a breathable atmosphere can be sustained in a capacity-limited, venting two-gas system, characterizing the viable region of operation and the optimal allocation of the two gases under finite storage and venting constraints. Rather than relying on conservative heuristics, this analysis pins down the precise feasibility boundary and the corresponding allocation strategy, giving formal guarantees on when life support can be maintained and how limited gas reserves should be apportioned to maximize safe endurance.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="supervisory-control" aria-labelledby="supervisory-control-h">
+                    <div class="section__head">
+                        <p class="section__num">08</p>
+                        <h2 id="supervisory-control-h">Discrete Event Systems and Supervisory Control</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>Branch-Set Preservation under Fixed Actuator Interfaces</h3></div>
+                            <div class="claim__body"><p>Kingston studies the mathematical conditions under which a supervisory controller can be reshaped without changing what it can physically do. Through the notion of equality-support covers, he establishes when the exact set of reachable branches &#8211; the admissible control paths &#8211; is preserved under a fixed actuator interface&#8203;. These results give formal, provable guarantees that safety-preserving reformulations of a control policy leave its true operational envelope intact, a foundation for trustworthy autonomy in life-critical settings.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>History-Dependent Veto Authority</h3></div>
+                            <div class="claim__body"><p>Working in the decentralized setting &#8211; where several local supervisors, each with only partial observations, must jointly decide whether to permit an event &#8211; Kingston formalizes control in which the authority to veto (disable) an event varies with the hidden execution history and may itself be concealed from the supervisors. This history-dependent veto model captures delegated and revocable control architectures, separating a command&#39;s behavioural effect from its issuer&#39;s permission to issue it, and gives a precise language for the state-dependent authority constraints that arise in real actuator and safety-filter interfaces.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>Exact Realization and Supremal Synthesis</h3></div>
+                            <div class="claim__body"><p>He proves that a specification is realizable exactly if and only if it is controllable and &#8220;legitimately co-observable&#8221; &#8211; each forbidden action must have a single supervisor that both knows the action is required and is authorized to veto it across an entire information cell &#8211; and shows via a minimal obstruction that decision knowledge and authority knowledge held by different supervisors do not compose&#8203;. For behaviour beyond exact realization, he extends relative co-observability to construct the supremal (largest) safe sublanguage under hidden, history-dependent authority, yielding an exact finite synthesis procedure and formal guarantees on which behaviours a controller can attain.</p></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="coda">
+                    <p>Overall, Phillip Kingston&#39;s research contributions center on bridging AI with operational business processes &#8211; formalizing the concept of a workflow intention, harnessing multimodal data through advanced neural architectures, injecting knowledge via graphs, and optimizing the results for real-world efficiency. His work provides a pathway to transform high-level process requirements into executable, optimized workflows that maintain compliance with domain knowledge and performance criteria. More recently, he has extended these ideas beyond digital workflows &#8211; developing quantitative, probabilistic frameworks for evaluating workflow quality and carrying the same optimization-under-constraint and formal-guarantee thinking into safety-critical autonomous control, where physics-grounded models and neural controllers cooperate to deliver reliable life support in extreme environments.</p>
+                </section>
+
+                <section class="section" id="papers" aria-labelledby="papers-h">
+                    <div class="section__head">
+                        <p class="section__num">&#8212;</p>
+                        <h2 id="papers-h">Papers</h2>
+                    </div>
+
+                    <h3 class="papers__year">2026</h3>
+                    <ul class="papers">
+                        <li class="paper"><a href="/pdf/Exact-Viability-and-Gas-Allocation-in-a-Capacity-Limited-Venting-Two-Gas-Atmosphere.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2026-08">Aug 2026</time>
+                            <span class="paper__title">Exact Viability and Gas Allocation in a Capacity-Limited Venting Two-Gas Atmosphere</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                        <li class="paper"><a href="/pdf/Exact-Realization-and-Supremal-Synthesis-under-History-Dependent-Veto-Authority.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2026-08">Aug 2026</time>
+                            <span class="paper__title">Exact Realization and Supremal Synthesis under History-Dependent Veto Authority</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                        <li class="paper"><a href="/pdf/Equality-Support-Covers-for-Exact-Branch-Set-Preservation-under-Fixed-Actuator-Interfaces.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2026-07">Jul 2026</time>
+                            <span class="paper__title">Equality-Support Covers for Exact Branch-Set Preservation under Fixed Actuator Interfaces</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                        <li class="paper"><a href="/pdf/Physicochemical-Neural%20Fusion-for-Semi-Closed-Circuit-Respiratory-Autonomy-in-Extreme-Environments.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2026-03">Mar 2026</time>
+                            <span class="paper__title">Physicochemical-Neural Fusion for Semi-Closed-Circuit Respiratory Autonomy in Extreme Environments</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                    </ul>
+
+                    <h3 class="papers__year">2025</h3>
+                    <ul class="papers">
+                        <li class="paper"><a href="/pdf/Opus-A-Quantitative-Framework-for-Workflow%20Evaluation.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2025-11">Nov 2025</time>
+                            <span class="paper__title">Opus &#8211; A Quantitative Framework for Workflow Evaluation</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                        <li class="paper"><a href="/pdf/Decoding-manipulative-narratives-in-cognitive-warfare.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2025-09">Sep 2025</time>
+                            <span class="paper__title">Decoding Manipulative Narratives in Cognitive Warfare</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                        <li class="paper"><a href="/pdf/Opus-A-Prompt-Intention-Framework-for-Complex-Workflow-Generation.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2025-06">Jun 2025</time>
+                            <span class="paper__title">Opus &#8211; A Prompt Intention Framework for Complex Workflow Generation</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                        <li class="paper"><a href="/pdf/Opus-A-Workflow-Intention-Framework-for-Complex-Workflow-Generation.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2025-01">Jan 2025</time>
+                            <span class="paper__title">Opus &#8211; A Workflow Intention Framework for Complex Workflow Generation</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                    </ul>
+
+                    <h3 class="papers__year">2024</h3>
+                    <ul class="papers">
+                        <li class="paper"><a href="/pdf/Opus-A-Large-Work-Model-for-Complex-Workflow-Generation.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2024-11">Nov 2024</time>
+                            <span class="paper__title">Opus &#8211; A Large Work Model for Complex Workflow Generation</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
+                    </ul>
+                </section>
+
+                <section class="section" id="connect" aria-labelledby="connect-h">
+                    <div class="section__head">
+                        <p class="section__num">&#8212;</p>
+                        <h2 id="connect-h">Connect</h2>
+                    </div>
+                    <div class="link-groups">
+                        <div class="link-group">
+                            <h3>Research &amp; publications</h3>
+                            <ul class="links">
+                                <li><a href="https://scholar.google.com/citations?user=jMYmIFkAAAAJ&amp;hl=en&amp;authuser=1&amp;oi=ao" target="_blank" rel="noopener"><span class="links__name">Google Scholar</span><span class="links__host">scholar.google.com</span></a></li>
+                                <li><a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Kingston,+Phillip" target="_blank" rel="noopener"><span class="links__name">arXiv</span><span class="links__host">arxiv.org</span></a></li>
+                                <li><a href="https://www.semanticscholar.org/author/Phillip-Kingston/2333356304" target="_blank" rel="noopener"><span class="links__name">Semantic Scholar</span><span class="links__host">semanticscholar.org</span></a></li>
+                                <li><a href="https://orcid.org/0009-0005-2256-3079" target="_blank" rel="noopener"><span class="links__name">ORCID</span><span class="links__host">orcid.org</span></a></li>
+                                <li><a href="https://www.scopus.com/pages/authors/60114263600" target="_blank" rel="noopener"><span class="links__name">Scopus</span><span class="links__host">scopus.com</span></a></li>
+                                <li><a href="https://dblp.org/pid/394/5346.html" target="_blank" rel="noopener"><span class="links__name">DBLP</span><span class="links__host">dblp.org</span></a></li>
+                                <li><a href="https://nau-ua.academia.edu/PhillipKingston" target="_blank" rel="noopener"><span class="links__name">Academia.edu</span><span class="links__host">nau-ua.academia.edu</span></a></li>
+                                <li><a href="https://loop.frontiersin.org/people/2967951/overview" target="_blank" rel="noopener"><span class="links__name">Frontiers</span><span class="links__host">loop.frontiersin.org</span></a></li>
+                                <li><a href="https://phillipkingston.owlstown.net/" target="_blank" rel="noopener"><span class="links__name">Owlstown</span><span class="links__host">owlstown.net</span></a></li>
+                                <li><a href="https://phillipkingston.faculty.bio" target="_blank" rel="noopener"><span class="links__name">Faculty Bio</span><span class="links__host">faculty.bio</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h3>Code &amp; models</h3>
+                            <ul class="links">
+                                <li><a href="https://github.com/phillipkingston" target="_blank" rel="noopener"><span class="links__name">GitHub</span><span class="links__host">github.com</span></a></li>
+                                <li><a href="https://phillipkingston.github.io" target="_blank" rel="noopener"><span class="links__name">GitHub Profile</span><span class="links__host">phillipkingston.github.io</span></a></li>
+                                <li><a href="https://huggingface.co/PhillipKingston" target="_blank" rel="noopener"><span class="links__name">HuggingFace</span><span class="links__host">huggingface.co</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h3>Social &amp; media</h3>
+                            <ul class="links">
+                                <li><a href="https://www.linkedin.com/in/phillipkingston/" target="_blank" rel="noopener"><span class="links__name">LinkedIn</span><span class="links__host">linkedin.com</span></a></li>
+                                <li><a href="https://x.com/phillipkingston" target="_blank" rel="noopener"><span class="links__name">X / Twitter</span><span class="links__host">x.com</span></a></li>
+                                <li><a href="https://bsky.app/profile/phillipkingston.bsky.social" target="_blank" rel="noopener"><span class="links__name">Bluesky</span><span class="links__host">bsky.app</span></a></li>
+                                <li><a href="https://www.youtube.com/@phillipkingston-ai" target="_blank" rel="noopener"><span class="links__name">YouTube</span><span class="links__host">youtube.com</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h3>Elsewhere</h3>
+                            <ul class="links">
+                                <li><a href="https://phillipkingston.link/" target="_blank" rel="noopener"><span class="links__name">Gravatar</span><span class="links__host">phillipkingston.link</span></a></li>
+                                <li><a href="https://about.me/phillipkingston" target="_blank" rel="noopener"><span class="links__name">About Me</span><span class="links__host">about.me</span></a></li>
+                                <li><a href="https://linktr.ee/phillipkingston" target="_blank" rel="noopener"><span class="links__name">Linktree</span><span class="links__host">linktr.ee</span></a></li>
+                                <li><a href="https://www.crunchbase.com/people/phillip-kingston" target="_blank" rel="noopener"><span class="links__name">Crunchbase</span><span class="links__host">crunchbase.com</span></a></li>
+                                <li><a href="https://www.galacticbioware.com" target="_blank" rel="noopener"><span class="links__name">Galactic Bioware</span><span class="links__host">galacticbioware.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Phillip Kingston. All rights reserved.</p>
+            <p class="footer__ids">
+                <a href="https://orcid.org/0009-0005-2256-3079" target="_blank" rel="noopener">ORCID 0009-0005-2256-3079</a>
+                <a href="https://www.scopus.com/pages/authors/60114263600" target="_blank" rel="noopener">Scopus 60114263600</a>
+            </p>
+        </footer>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Phillip Kingston",
+      "alternateName": "Phil Kingston",
+      "url": "https://www.phillipkingston.com/",
+      "image": "https://www.phillipkingston.com/img/Apple-Touch-180x180.png",
+      "jobTitle": ["Visiting Professor", "Member of Technical Staff"],
+      "description": "Engineer and entrepreneur working on AI-driven workflow automation, quantitative workflow evaluation, and safety-critical autonomous control.",
+      "knowsAbout": ["Workflow Automation", "Large Work Models", "Multimodal Machine Learning", "Graph Theory", "Reinforcement Learning", "Supervisory Control Theory", "Discrete Event Systems", "Life Support Systems"],
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "https://orcid.org/0009-0005-2256-3079"
+      },
+      "affiliation": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "National University Kyiv Aviation Institute",
+          "address": { "@type": "PostalAddress", "addressLocality": "Kyiv", "addressCountry": "UA" }
+        },
+        {
+          "@type": "Organization",
+          "name": "AppliedAI",
+          "address": { "@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE" }
+        }
+      ],
+      "sameAs": [
+        "https://orcid.org/0009-0005-2256-3079",
+        "https://www.scopus.com/pages/authors/60114263600",
+        "https://scholar.google.com/citations?user=jMYmIFkAAAAJ",
+        "https://arxiv.org/a/kingston_p_1",
+        "https://www.semanticscholar.org/author/Phillip-Kingston/2333356304",
+        "https://dblp.org/pid/394/5346.html",
+        "https://nau-ua.academia.edu/PhillipKingston",
+        "https://loop.frontiersin.org/people/2967951/overview",
+        "https://phillipkingston.owlstown.net/",
+        "https://phillipkingston.faculty.bio",
+        "https://github.com/phillipkingston",
+        "https://phillipkingston.github.io",
+        "https://huggingface.co/PhillipKingston",
+        "https://www.linkedin.com/in/phillipkingston/",
+        "https://x.com/phillipkingston",
+        "https://bsky.app/profile/phillipkingston.bsky.social",
+        "https://www.youtube.com/@phillipkingston-ai",
+        "https://phillipkingston.link/",
+        "https://about.me/phillipkingston",
+        "https://linktr.ee/phillipkingston",
+        "https://www.crunchbase.com/people/phillip-kingston",
+        "https://www.galacticbioware.com"
+      ]
+    }
+    </script>
+
+    <script src="/js/site.js" defer></script>
 </body>
 </html>
