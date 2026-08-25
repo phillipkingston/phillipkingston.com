@@ -7,3 +7,6 @@
 *.ged
 *.gedcom
 *.ged.txt
+
+__pycache__/
+*.pyc
