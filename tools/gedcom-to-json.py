@@ -24,7 +24,13 @@ LIFESPAN = 100
 # Tags carrying free text, contact details, media or Ancestry back-references.
 # Dropped from every record, living or dead.
 STRIP_TAGS = {"NOTE", "ADDR", "PHON", "EMAIL", "WWW", "OBJE", "FILE", "SOUR",
-              "_APID", "_LINK", "RIN", "AFN", "CONT", "CONC"}
+              "RIN", "AFN", "CONT", "CONC", "CAUS", "OCCU", "RESI"}
+
+
+def strippable(tag):
+    """Vendor extensions all begin with an underscore (_APID, _OID, _USER...).
+    Refuse the whole class rather than a list that a new export can outgrow."""
+    return tag in STRIP_TAGS or tag.startswith("_")
 
 ANCESTRY_URL = re.compile(r"(ancestry\.[a-z.]+|/tree/person|_APID)", re.I)
 YEAR = re.compile(r"\b(\d{3,4})\b")
@@ -78,6 +84,35 @@ def is_living(birth, death, has_death_record, this_year):
     return birth > this_year - LIFESPAN
 
 
+SEPT_SURNAMES = ("mcfadyen", "macfadyen", "macfadzean", "maclaine", "maclean",
+                 "anderson", "gillanders", "macandrew", "ross")
+
+
+def tidy_name(name):
+    """Normalise display casing without touching the source export."""
+    if not name:
+        return name
+    if name.isupper() or name[:1].islower():
+        out = []
+        for word in name.split():
+            if len(word) > 2 and word[:2].lower() in ("mc", "o'"):
+                out.append(word[:2].capitalize() + word[2:].capitalize())
+            elif len(word) > 3 and word[:3].lower() == "mac":
+                out.append("Mac" + word[3:].capitalize())
+            else:
+                out.append(word.capitalize() if word.isupper() or word[:1].islower() else word)
+        name = " ".join(out)
+    return name
+
+
+def sept_of(name):
+    low = (name or "").lower()
+    for s in SEPT_SURNAMES:
+        if s in low:
+            return s
+    return None
+
+
 def clean(text):
     """Refuse anything that smells like an Ancestry back-reference."""
     return "" if not text or ANCESTRY_URL.search(text) else text.strip()
@@ -91,7 +126,7 @@ def convert(path, this_year=None):
     for rec in records:
         if rec["tag"] == "INDI" and rec["xref"]:
             rec["children"] = [c for c in rec["children"]
-                               if c["tag"] not in STRIP_TAGS]
+                               if not strippable(c["tag"])]
             birth, death = year_of(rec, "BIRT"), year_of(rec, "DEAT")
             has_death = child(rec, "DEAT") is not None
             pid = rec["xref"]
@@ -103,13 +138,20 @@ def convert(path, this_year=None):
 
             nm = child(rec, "NAME")
             name = clean(nm["value"].replace("/", "").strip()) if nm else ""
+            if not name and nm:                      # Ancestry splits GIVN/SURN
+                parts = [(child(nm, t) or {}).get("value", "").strip()
+                         for t in ("GIVN", "SURN")]
+                name = clean(" ".join(p for p in parts if p))
+            display = tidy_name(name) or "Unknown"
             people[pid] = {
                 "id": pid,
                 "living": False,
-                "name": name or "Unknown",
+                "name": display,
+                "sept": sept_of(display),
                 "birth": birth,
                 "death": death,
-                "place": clean((child(child(rec, "BIRT") or rec, "PLAC") or {}).get("value", "")),
+                "place": clean(((child(child(rec, "BIRT"), "PLAC")
+                                 if child(rec, "BIRT") else None) or {}).get("value", "")),
             }
         elif rec["tag"] == "FAM" and rec["xref"]:
             families[rec["xref"]] = {
@@ -119,18 +161,46 @@ def convert(path, this_year=None):
                              if c["tag"] == "CHIL"],
             }
 
-    # Parent -> children edges, which is all the descendant tree needs.
+    # Both directions: children for a descent view, parents for a pedigree.
     for p in people.values():
         p["children"] = []
+        p["parents"] = []
     for fam in families.values():
         for parent in (fam["husb"], fam["wife"]):
             if parent in people:
                 for kid in fam["children"]:
                     if kid in people and kid not in people[parent]["children"]:
                         people[parent]["children"].append(kid)
+                    if kid in people and parent not in people[kid]["parents"]:
+                        people[kid]["parents"].append(parent)
 
     has_parent = {k for f in families.values() for k in f["children"]}
     roots = [p["id"] for p in people.values() if p["id"] not in has_parent]
+
+    def ancestor_count(pid, seen=None):
+        seen = seen if seen is not None else set()
+        for par in people[pid]["parents"]:
+            if par not in seen:
+                seen.add(par)
+                ancestor_count(par, seen)
+        return len(seen)
+
+    focal = max(people, key=ancestor_count) if people else None
+
+    # Data-quality notes for the maintainer, on stderr, never published.
+    warn = []
+    for p in people.values():
+        if p["living"]:
+            continue
+        if not re.match(r"^[A-Za-z' .\u00c0-\u024f-]+$", p["name"]):
+            warn.append(f"  odd characters in name: {p['name']!r} ({p['id']})")
+        if p.get("birth") and p.get("death") and p["death"] < p["birth"]:
+            warn.append(f"  death before birth: {p['name']!r} ({p['id']})")
+    for line in warn:
+        print(line, file=sys.stderr)
+    if warn:
+        print(f"  {len(warn)} data-quality note(s) above; source export unchanged",
+              file=sys.stderr)
 
     return {
         "meta": {
@@ -140,6 +210,7 @@ def convert(path, this_year=None):
             "total": len(people),
         },
         "roots": roots,
+        "focal": focal,
         "people": people,
     }
 
