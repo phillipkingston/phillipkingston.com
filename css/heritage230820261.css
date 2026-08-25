@@ -357,3 +357,16 @@ a.cite::after { content: "]"; }
 /* A descendant who is the meeting point of two lines gets a dashed edge from
    the second line, so a convergence never reads as a plain parent-child link. */
 .tree__edge--join { stroke-dasharray: 4 3; stroke: var(--accent); opacity: 0.75; }
+
+/* Direction toggle: which of the two views is showing. */
+.tree__bar button.is-on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.tree__bar button[hidden] { display: none; }
+
+/* A node whose surname is one of the sept names gets an accent edge, so the
+   connection between the tree and the sept sections is visible at a glance. */
+.tree__node .n-sept { fill: var(--accent); }
+.tree__key .k-sept { border-left: 3px solid var(--accent); background: var(--paper); }

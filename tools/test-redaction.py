@@ -79,8 +79,19 @@ def main():
             failures.append(f"MISSING: {needle!r} should be published")
 
     living = data["people"]["I2"]
-    if set(living) != {"id", "living", "name", "children"}:
-        failures.append(f"living record has unexpected keys: {sorted(living)}")
+    # A living record may carry only an id, the Living label and relationship
+    # links. Any other key is a potential disclosure and fails the test.
+    allowed = {"id", "living", "name", "children", "parents"}
+    if set(living) != allowed:
+        failures.append(f"living record keys {sorted(living)} != {sorted(allowed)}")
+    # Relationship links must be bare ids that resolve inside the tree, never
+    # names or dates smuggled through as edge labels.
+    for key in ("children", "parents"):
+        for ref in living.get(key, []):
+            if ref not in data["people"]:
+                failures.append(f"living {key} ref {ref!r} does not resolve")
+            if not str(ref).startswith("I"):
+                failures.append(f"living {key} ref {ref!r} is not a bare id")
     if living["name"] != "Living":
         failures.append(f"living record name is {living['name']!r}, not 'Living'")
     if data["meta"]["redactedCount"] != 1:
