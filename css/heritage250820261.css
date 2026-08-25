@@ -370,3 +370,198 @@ a.cite::after { content: "]"; }
    connection between the tree and the sept sections is visible at a glance. */
 .tree__node .n-sept { fill: var(--accent); }
 .tree__key .k-sept { border-left: 3px solid var(--accent); background: var(--paper); }
+
+/* --- Crest badges --------------------------------------------------------- */
+/* Drawn in line only, from the published blazons. A crest badge is the chief's
+   crest and motto inside a strap and buckle; the strap is what marks the
+   wearer as a follower rather than the owner of the arms. Nothing here
+   reproduces a chief's personal arms. */
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1px;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.badge {
+  margin: 0;
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  background: var(--paper-raised);
+  text-align: center;
+}
+.badge svg.cb {
+  display: block;
+  width: min(15rem, 100%);
+  height: auto;
+  margin-inline: auto;
+  overflow: visible;
+}
+.badge figcaption { margin-top: 0.9rem; }
+.badge h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+.badge__blazon {
+  margin-top: 0.35rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  max-width: 32ch;
+  margin-inline: auto;
+}
+.badge__motto {
+  margin-top: 0.5rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  max-width: 34ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.cb-strap { fill: none; stroke: var(--ink); stroke-width: 1.4; }
+.cb-motto {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  fill: var(--ink);
+}
+.cb-buckle rect, .cb-buckle path { fill: none; stroke: var(--ink); stroke-width: 1.4; }
+.cb-stem { fill: none; stroke: var(--ink); stroke-width: 1.7; stroke-linecap: round; }
+.cb-fill use { fill: var(--ink); stroke: none; }
+.cb-haft { fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; }
+.cb-blade {
+  fill: var(--paper-raised);
+  stroke: var(--ink);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+}
+.cb-edge, .cb-socket { fill: none; stroke: var(--ink); stroke-width: 1; opacity: 0.5; }
+.cb-hand path {
+  fill: var(--paper-raised);
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* --- Tartan setts --------------------------------------------------------- */
+/* The swatches carry the register's own dye colours, so they deliberately do
+   not follow the site theme: a tartan is a record of particular colours. Each
+   is one full sett, expanded from the published threadcount by
+   tools/make-tartans.py, scaled to a common box rather than a common thread
+   size, so the setts are not to scale against one another. */
+
+.setts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1px;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.sett {
+  margin: 0;
+  padding: clamp(0.9rem, 2vw, 1.2rem);
+  background: var(--paper-raised);
+}
+.sett__swatch {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid var(--rule-strong);
+  border-radius: 1px;
+}
+.sett figcaption { margin-top: 0.7rem; }
+.sett h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.sett__count {
+  margin-top: 0.3rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.sett__meta {
+  margin-top: 0.35rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
+/* --- Map ------------------------------------------------------------------ */
+
+.mapfig { margin: clamp(1.75rem, 3.5vw, 2.5rem) 0 0; max-width: 42rem; }
+.mapfig__frame {
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+.mapfig svg { display: block; width: 100%; height: auto; }
+.mapfig figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 58ch;
+}
+
+.mp-land {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 0.9;
+  stroke-linejoin: round;
+}
+.mp-inset rect {
+  fill: none;
+  stroke: var(--rule-strong);
+  stroke-width: 0.8;
+  stroke-dasharray: 3 3;
+}
+.mp-inset text {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: var(--ink-3);
+}
+.mp-lead { fill: none; stroke: var(--accent); stroke-width: 0.8; }
+.mp-dot { fill: var(--accent); }
+.mp-place {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  fill: var(--ink);
+}
+.mp-gloss { font-family: var(--serif); font-style: italic; font-size: 12px; fill: var(--ink-3); }
+
+@media (max-width: 30rem) {
+  .mp-place { font-size: 13px; }
+  .mp-gloss { font-size: 14px; }
+  .mp-inset text { font-size: 11px; }
+}
+
+@media print {
+  .badge, .sett, .mapfig { break-inside: avoid; }
+}

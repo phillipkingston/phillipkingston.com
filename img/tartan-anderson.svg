@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 302" width="302" height="302" role="img" aria-labelledby="t">
+<title id="t">The Anderson tartan: a 302-thread sett in Anderson blue, red, black, green, gold, blue and white.</title>
+<!-- Anderson. STA/STWR 1394. One full sett, 302 threads, expanded from the published threadcount: R/6 AL12 R4 K4 R4 AL36 K6 W6 K6 DY4 K4 DY4 K8 R4 B8 R6 G12 R4 G12 R/8 -->
+<defs><pattern id="twill" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3" stroke="#ffffff" stroke-width="0.500" stroke-opacity="0.10"/></pattern></defs>
+<g>
+<rect x="0" y="0" width="6" height="302" fill="#C80000"/>
+<rect x="6" y="0" width="12" height="302" fill="#48A4C0"/>
+<rect x="18" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="22" y="0" width="4" height="302" fill="#101010"/>
+<rect x="26" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="30" y="0" width="36" height="302" fill="#48A4C0"/>
+<rect x="66" y="0" width="6" height="302" fill="#101010"/>
+<rect x="72" y="0" width="6" height="302" fill="#E0E0E0"/>
+<rect x="78" y="0" width="6" height="302" fill="#101010"/>
+<rect x="84" y="0" width="4" height="302" fill="#E8C000"/>
+<rect x="88" y="0" width="4" height="302" fill="#101010"/>
+<rect x="92" y="0" width="4" height="302" fill="#E8C000"/>
+<rect x="96" y="0" width="8" height="302" fill="#101010"/>
+<rect x="104" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="108" y="0" width="8" height="302" fill="#2C2C80"/>
+<rect x="116" y="0" width="6" height="302" fill="#C80000"/>
+<rect x="122" y="0" width="12" height="302" fill="#006818"/>
+<rect x="134" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="138" y="0" width="12" height="302" fill="#006818"/>
+<rect x="150" y="0" width="8" height="302" fill="#C80000"/>
+<rect x="158" y="0" width="12" height="302" fill="#006818"/>
+<rect x="170" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="174" y="0" width="12" height="302" fill="#006818"/>
+<rect x="186" y="0" width="6" height="302" fill="#C80000"/>
+<rect x="192" y="0" width="8" height="302" fill="#2C2C80"/>
+<rect x="200" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="204" y="0" width="8" height="302" fill="#101010"/>
+<rect x="212" y="0" width="4" height="302" fill="#E8C000"/>
+<rect x="216" y="0" width="4" height="302" fill="#101010"/>
+<rect x="220" y="0" width="4" height="302" fill="#E8C000"/>
+<rect x="224" y="0" width="6" height="302" fill="#101010"/>
+<rect x="230" y="0" width="6" height="302" fill="#E0E0E0"/>
+<rect x="236" y="0" width="6" height="302" fill="#101010"/>
+<rect x="242" y="0" width="36" height="302" fill="#48A4C0"/>
+<rect x="278" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="282" y="0" width="4" height="302" fill="#101010"/>
+<rect x="286" y="0" width="4" height="302" fill="#C80000"/>
+<rect x="290" y="0" width="12" height="302" fill="#48A4C0"/>
+</g>
+<g fill-opacity="0.5">
+<rect x="0" y="0" width="302" height="6" fill="#C80000"/>
+<rect x="0" y="6" width="302" height="12" fill="#48A4C0"/>
+<rect x="0" y="18" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="22" width="302" height="4" fill="#101010"/>
+<rect x="0" y="26" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="30" width="302" height="36" fill="#48A4C0"/>
+<rect x="0" y="66" width="302" height="6" fill="#101010"/>
+<rect x="0" y="72" width="302" height="6" fill="#E0E0E0"/>
+<rect x="0" y="78" width="302" height="6" fill="#101010"/>
+<rect x="0" y="84" width="302" height="4" fill="#E8C000"/>
+<rect x="0" y="88" width="302" height="4" fill="#101010"/>
+<rect x="0" y="92" width="302" height="4" fill="#E8C000"/>
+<rect x="0" y="96" width="302" height="8" fill="#101010"/>
+<rect x="0" y="104" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="108" width="302" height="8" fill="#2C2C80"/>
+<rect x="0" y="116" width="302" height="6" fill="#C80000"/>
+<rect x="0" y="122" width="302" height="12" fill="#006818"/>
+<rect x="0" y="134" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="138" width="302" height="12" fill="#006818"/>
+<rect x="0" y="150" width="302" height="8" fill="#C80000"/>
+<rect x="0" y="158" width="302" height="12" fill="#006818"/>
+<rect x="0" y="170" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="174" width="302" height="12" fill="#006818"/>
+<rect x="0" y="186" width="302" height="6" fill="#C80000"/>
+<rect x="0" y="192" width="302" height="8" fill="#2C2C80"/>
+<rect x="0" y="200" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="204" width="302" height="8" fill="#101010"/>
+<rect x="0" y="212" width="302" height="4" fill="#E8C000"/>
+<rect x="0" y="216" width="302" height="4" fill="#101010"/>
+<rect x="0" y="220" width="302" height="4" fill="#E8C000"/>
+<rect x="0" y="224" width="302" height="6" fill="#101010"/>
+<rect x="0" y="230" width="302" height="6" fill="#E0E0E0"/>
+<rect x="0" y="236" width="302" height="6" fill="#101010"/>
+<rect x="0" y="242" width="302" height="36" fill="#48A4C0"/>
+<rect x="0" y="278" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="282" width="302" height="4" fill="#101010"/>
+<rect x="0" y="286" width="302" height="4" fill="#C80000"/>
+<rect x="0" y="290" width="302" height="12" fill="#48A4C0"/>
+</g>
+<rect width="302" height="302" fill="url(#twill)"/>
+</svg>

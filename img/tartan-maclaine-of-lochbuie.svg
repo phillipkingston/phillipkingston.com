@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114" width="114" height="114" role="img" aria-labelledby="t">
+<title id="t">The Maclaine of Lochbuie tartan: a 114-thread sett in red, hunting green, azure and yellow.</title>
+<!-- Maclaine of Lochbuie. STA/STWR 1462. One full sett, 114 threads, expanded from the published threadcount: R/64 HG16 A8 Y/2 -->
+<defs><pattern id="twill" patternUnits="userSpaceOnUse" width="2" height="2" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2" stroke="#ffffff" stroke-width="0.500" stroke-opacity="0.10"/></pattern></defs>
+<g>
+<rect x="0" y="0" width="64" height="114" fill="#C80000"/>
+<rect x="64" y="0" width="16" height="114" fill="#285800"/>
+<rect x="80" y="0" width="8" height="114" fill="#5C8CA8"/>
+<rect x="88" y="0" width="2" height="114" fill="#E8C000"/>
+<rect x="90" y="0" width="8" height="114" fill="#5C8CA8"/>
+<rect x="98" y="0" width="16" height="114" fill="#285800"/>
+</g>
+<g fill-opacity="0.5">
+<rect x="0" y="0" width="114" height="64" fill="#C80000"/>
+<rect x="0" y="64" width="114" height="16" fill="#285800"/>
+<rect x="0" y="80" width="114" height="8" fill="#5C8CA8"/>
+<rect x="0" y="88" width="114" height="2" fill="#E8C000"/>
+<rect x="0" y="90" width="114" height="8" fill="#5C8CA8"/>
+<rect x="0" y="98" width="114" height="16" fill="#285800"/>
+</g>
+<rect width="114" height="114" fill="url(#twill)"/>
+</svg>
