@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "status": "placeholder",
+    "note": "Documented figures are sourced in the References section. Generations marked placeholder await the Ancestry export. Living individuals are withheld.",
+    "redactionRule": "no death record and born after 1926",
+    "redactedCount": 3,
+    "total": 13
+  },
+  "roots": [
+    "M1",
+    "R1"
+  ],
+  "people": {
+    "M1": {
+      "id": "M1",
+      "name": "Gillean of the Battle Axe",
+      "note": "Eponym of the Macleans; tradition places him at the Battle of Largs, 1263.",
+      "kind": "documented",
+      "clan": "maclaine",
+      "living": false,
+      "children": [
+        "M2"
+      ]
+    },
+    "M2": {
+      "id": "M2",
+      "name": "Iain Dubh",
+      "note": "Black John. Great-grandson of Gillean; father of the two lines on Mull.",
+      "kind": "documented",
+      "clan": "maclaine",
+      "living": false,
+      "children": [
+        "M3",
+        "M4"
+      ]
+    },
+    "M3": {
+      "id": "M3",
+      "name": "Hector Reaganach",
+      "note": "Hector the Stern, 1st of Lochbuie. Granted lands on Mull by the Lord of the Isles, c. 1350. Built Moy Castle.",
+      "kind": "documented",
+      "clan": "maclaine",
+      "living": false,
+      "children": [
+        "M5"
+      ]
+    },
+    "M4": {
+      "id": "M4",
+      "name": "Lachlan Lubanach",
+      "note": "Lachlan the Wily. Elder line to Duart. Shown for context; the Duart descent is not traced here.",
+      "kind": "documented",
+      "clan": "maclaine-duart",
+      "living": false,
+      "children": []
+    },
+    "M5": {
+      "id": "M5",
+      "name": "Lochbuie chiefs, 2nd\u201325th",
+      "note": "Placeholder for the chiefly succession. Awaiting the Ancestry export.",
+      "kind": "placeholder",
+      "clan": "maclaine",
+      "living": false,
+      "children": [
+        "M6"
+      ]
+    },
+    "M6": {
+      "id": "M6",
+      "name": "MacFadzean line",
+      "note": "Placeholder. Sept descent to be traced from the export. Also written MacFadyen and McFadyen.",
+      "kind": "placeholder",
+      "clan": "macfadyen",
+      "living": false,
+      "children": [
+        "X1"
+      ]
+    },
+    "R1": {
+      "id": "R1",
+      "name": "Fearchar mac an t-Sagairt",
+      "death": 1251,
+      "note": "Of the hereditary abbots of Applecross. Knighted 1215; Earl of Ross by 1234.",
+      "kind": "documented",
+      "clan": "ross",
+      "living": false,
+      "children": [
+        "R2"
+      ]
+    },
+    "R2": {
+      "id": "R2",
+      "name": "Uilleam I, Earl of Ross",
+      "death": 1274,
+      "note": "Succeeded his father as earl c. 1251.",
+      "kind": "documented",
+      "clan": "ross",
+      "living": false,
+      "children": [
+        "R3"
+      ]
+    },
+    "R3": {
+      "id": "R3",
+      "name": "Earls of Ross",
+      "note": "Placeholder for the Clann Anndrais descent carrying the Anderson name. Awaiting the export.",
+      "kind": "placeholder",
+      "clan": "ross",
+      "living": false,
+      "children": [
+        "R4"
+      ]
+    },
+    "R4": {
+      "id": "R4",
+      "name": "Anderson line",
+      "note": "Placeholder. Sept descent to be traced from the export.",
+      "kind": "placeholder",
+      "clan": "anderson",
+      "living": false,
+      "children": [
+        "X1"
+      ]
+    },
+    "X1": {
+      "id": "X1",
+      "living": true,
+      "name": "Living",
+      "children": [
+        "X2",
+        "X3"
+      ]
+    },
+    "X2": {
+      "id": "X2",
+      "living": true,
+      "name": "Living",
+      "children": []
+    },
+    "X3": {
+      "id": "X3",
+      "living": true,
+      "name": "Living",
+      "children": []
+    }
+  }
+}

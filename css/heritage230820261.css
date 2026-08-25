@@ -1,0 +1,359 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Heritage page components. Loaded after css/styles220820261.css and reuses
+   its tokens, type scale and section furniture — nothing is redefined here.
+   ========================================================================== */
+
+/* --- Back-link to the research page --------------------------------------- */
+
+.backlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5ch;
+  margin-bottom: 1.25rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.backlink:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* --- Notices: privacy, placeholder ---------------------------------------- */
+
+.notice {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  margin-block: clamp(1.5rem, 3vw, 2rem);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+.notice__label {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 0.2em;
+  white-space: nowrap;
+}
+
+/* --- Clan plates ---------------------------------------------------------- */
+
+.plates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1px;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.plate { padding: clamp(1.1rem, 2.5vw, 1.6rem); background: var(--paper-raised); }
+.plate h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.plate__gaelic {
+  margin-top: 0.15rem;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--accent);
+}
+.plate dl {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.4rem 0.85rem;
+  margin: 1rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
+.plate dt {
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 0.35em;
+}
+.plate dd { margin: 0; color: var(--ink-2); line-height: 1.45; }
+.plate dd em { color: var(--ink); }
+
+/* --- Timeline ------------------------------------------------------------- */
+
+.timeline {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid var(--rule);
+}
+.tl {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.25rem 1.25rem;
+  padding: 1rem 0 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.tl__year {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.1em;
+}
+.tl__body { max-width: 58ch; }
+.tl__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.tl__body p { margin-top: 0.3rem; color: var(--ink-2); font-size: 0.9375rem; line-height: 1.6; }
+.tl__clan {
+  display: inline-block;
+  margin-left: 0.5ch;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.1rem 0.4rem;
+  vertical-align: 0.15em;
+}
+
+@media (max-width: 34rem) {
+  .tl { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; }
+}
+
+/* --- Citations ------------------------------------------------------------ */
+
+a.cite {
+  font-family: var(--mono);
+  font-size: 0.7em;
+  font-weight: 500;
+  vertical-align: 0.4em;
+  padding: 0 0.15em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 0;
+}
+a.cite:hover { text-decoration: underline; }
+a.cite::before { content: "["; }
+a.cite::after { content: "]"; }
+
+.sources { counter-reset: src; }
+.source {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.3rem 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  scroll-margin-top: 3rem;
+}
+.source:target { background: var(--accent-soft); }
+.source__n {
+  font-family: var(--mono);
+  font-size: var(--step-meta);
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.15em;
+}
+.source__body { color: var(--ink-2); max-width: 66ch; }
+.source__body a { color: var(--ink); text-decoration-color: var(--rule-strong); }
+.source__body a:hover { color: var(--accent); }
+.source__body cite { font-style: italic; color: var(--ink); }
+
+.tag {
+  display: inline-block;
+  margin-right: 0.4ch;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.tag--secondary { border-color: var(--accent); color: var(--accent); }
+.tag--tertiary { border-style: dashed; }
+.tag--tradition { border-style: dotted; font-style: italic; }
+
+/* --- Family tree ---------------------------------------------------------- */
+
+.tree {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper-raised);
+  overflow: hidden;
+}
+.tree__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-sunk);
+}
+.tree__bar button {
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+.tree__bar button:hover { border-color: var(--accent); color: var(--accent); }
+.tree__hint {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+}
+
+.tree__stage { height: clamp(24rem, 62vh, 40rem); touch-action: none; cursor: grab; }
+.tree__stage.is-panning { cursor: grabbing; }
+.tree__stage svg { display: block; width: 100%; height: 100%; }
+
+.tree__edge { fill: none; stroke: var(--rule-strong); stroke-width: 1; }
+.tree__node rect {
+  fill: var(--paper);
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+  rx: 2;
+}
+.tree__node text { font-family: var(--serif); fill: var(--ink); font-size: 13px; }
+.tree__node .n-dates {
+  font-family: var(--mono);
+  fill: var(--ink-3);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.tree__node[data-kind="placeholder"] rect { stroke-dasharray: 3 3; fill: var(--paper-sunk); }
+.tree__node[data-kind="placeholder"] text { fill: var(--ink-3); font-style: italic; }
+.tree__node[data-kind="living"] rect { stroke-dasharray: 2 3; fill: transparent; }
+.tree__node[data-kind="living"] text { fill: var(--ink-3); font-style: italic; }
+.tree__node:hover rect { stroke: var(--accent); }
+.tree__node:focus { outline: none; }
+.tree__node:focus-visible rect { stroke: var(--accent); stroke-width: 2; }
+.tree__node.is-selected rect { stroke: var(--accent); stroke-width: 2; }
+
+.tree__panel {
+  border-top: 1px solid var(--rule);
+  padding: 0.9rem 1.1rem;
+  min-height: 5.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.tree__panel h3 { font-size: 1.125rem; font-weight: 600; color: var(--ink); }
+.tree__panel .meta {
+  margin-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: var(--step-meta);
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+.tree__panel p { margin-top: 0.45rem; max-width: 62ch; }
+.tree__panel .empty { color: var(--ink-3); font-style: italic; }
+
+/* Legend */
+.tree__key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin-top: 0.85rem;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.tree__key span { display: inline-flex; align-items: center; gap: 0.45ch; }
+.tree__key i {
+  width: 1.1rem;
+  height: 0.7rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  background: var(--paper);
+}
+.tree__key .k-placeholder { border-style: dashed; background: var(--paper-sunk); }
+.tree__key .k-living { border-style: dotted; background: transparent; }
+
+/* --- No-JavaScript fallback outline --------------------------------------- */
+
+.tree__fallback { padding: 1rem 1.1rem; }
+.tree__fallback ol { list-style: none; padding-left: 0; }
+.tree__fallback ol ol {
+  padding-left: 1.1rem;
+  margin-left: 0.35rem;
+  border-left: 1px solid var(--rule);
+}
+.tree__fallback li { padding: 0.3rem 0; }
+.tree__name { color: var(--ink); }
+.tree__name--living, .tree__name--placeholder { color: var(--ink-3); font-style: italic; }
+.tree__dates {
+  margin-left: 0.6ch;
+  font-family: var(--mono);
+  font-size: var(--step-meta);
+  color: var(--ink-3);
+}
+
+/* --- Sept attachment diagram ---------------------------------------------- */
+
+.sept-map { margin-top: clamp(1.25rem, 2.5vw, 1.75rem); max-width: 34rem; }
+.sept-map svg { display: block; width: 100%; height: auto; overflow: visible; }
+.sept-map .sm-line { fill: none; stroke: var(--rule-strong); stroke-width: 1; }
+.sept-map .sm-line--dashed { stroke-dasharray: 4 3; }
+.sept-map .sm-box { fill: var(--paper-raised); stroke: var(--rule-strong); rx: 2; }
+.sept-map .sm-box--sept { fill: var(--paper-sunk); }
+.sept-map .sm-label { font-family: var(--serif); font-size: 13px; fill: var(--ink); }
+.sept-map .sm-note {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--ink-3);
+}
+
+/* --- Print ---------------------------------------------------------------- */
+
+@media print {
+  .tree__bar, .tree__stage, .tree__panel, .tree__key, .backlink { display: none !important; }
+  .tree__fallback { display: block !important; }
+  .tree, .notice, .plate { break-inside: avoid; }
+}
+
+/* A descendant who is the meeting point of two lines gets a dashed edge from
+   the second line, so a convergence never reads as a plain parent-child link. */
+.tree__edge--join { stroke-dasharray: 4 3; stroke: var(--accent); opacity: 0.75; }
