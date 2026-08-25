@@ -1,2 +1,12 @@
 .DS_Store
 .htaccess
+
+# Genealogy exports are never committed. tools/gedcom-to-json.py reads one of
+# these locally and emits only redacted output; the raw file contains living
+# people's names, dates, addresses and Ancestry profile links.
+*.ged
+*.gedcom
+*.ged.txt
+
+__pycache__/
+*.pyc

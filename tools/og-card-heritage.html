@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+  Source for img/og-heritage-1200x630.png (the /heritage/ share card).
+
+  Render: serve the repo root, then screenshot this page at exactly 1200x630
+  with device_scale_factor=1 into img/og-heritage-1200x630.png. Asset paths are root-absolute, so it
+  only renders correctly when served from the site root. Not linked from the site.
+-->
+<html lang="en"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Newsreader;src:url("/fonts/newsreader-latin-var.woff2") format("woff2");font-weight:200 800;}
+@font-face{font-family:"IBM Plex Mono";src:url("/fonts/ibm-plex-mono-500-latin.woff2") format("woff2");font-weight:500;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;background:#faf8f4;color:#17150f;
+     font-family:Newsreader,Georgia,serif;font-optical-sizing:auto;overflow:hidden;
+     display:flex;flex-direction:column;justify-content:space-between;
+     padding:72px 80px;position:relative}
+body::before{content:"";position:absolute;inset:0;
+     background:radial-gradient(120% 90% at 100% 0%, #f3efe7 0%, rgba(243,239,231,0) 60%)}
+.rule{height:3px;background:#7e2c18;width:88px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:16px;
+     letter-spacing:.22em;text-transform:uppercase;color:#6e675a;margin-top:26px}
+h1{font-size:76px;font-weight:600;letter-spacing:-.028em;line-height:.95;margin-top:14px}
+.aff{font-size:27px;line-height:1.42;color:#423d33;max-width:790px;margin-top:26px}
+.topics{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:40px;max-width:1040px}
+.topics span{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:14px;
+     letter-spacing:.1em;text-transform:uppercase;color:#6e675a;
+     border:1px solid #dfd9cd;border-radius:2px;padding:7px 11px;background:#fffdfa}
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;
+      border-top:1px solid #dfd9cd;padding-top:22px}
+.ids{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:15px;
+     letter-spacing:.1em;color:#6e675a;line-height:1.9}
+.site{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:16px;
+     letter-spacing:.12em;color:#7e2c18;text-transform:uppercase}
+img{width:150px;height:150px;border-radius:50%;position:absolute;top:72px;right:80px;
+    box-shadow:0 0 0 1px #dfd9cd}
+</style></head><body>
+<img src="/img/Apple-Touch-180x180.png" alt="">
+<div>
+  <div class="rule"></div>
+  <p class="eyebrow">Heritage</p>
+  <h1>Clan Maclaine<br>&amp; Clan Ross</h1>
+  <p class="aff">Maclaine of Lochbuie and the MacFadzean sept<br>Clan Ross and the Anderson sept</p>
+  <div class="topics">
+    <span>Isle of Mull</span><span>Easter Ross</span><span>Septs</span>
+    <span>Sources</span><span>Family Tree</span>
+  </div>
+</div>
+<div class="foot">
+  <p class="ids">MOY CASTLE, LOCHBUIE<br>BALNAGOWN, EASTER ROSS</p>
+  <p class="site">phillipkingston.com/heritage</p>
+</div>
+</body></html>
