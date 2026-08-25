@@ -565,3 +565,50 @@ a.cite::after { content: "]"; }
 @media print {
   .badge, .sett, .mapfig { break-inside: avoid; }
 }
+
+/* --- Spelling guide ------------------------------------------------------- */
+/* Reuses .timeline / .tl for the dated forms and .plate__gaelic for the Gaelic
+   line, so a recorded spelling is laid out exactly like a dated event, which
+   is what it is. */
+
+.spellings { margin-top: clamp(1.5rem, 3vw, 2rem); }
+.spell + .spell {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 2px solid var(--rule-strong);
+}
+.spell > h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.spell .plate__gaelic { max-width: 60ch; }
+.spell .timeline { margin-top: clamp(1rem, 2vw, 1.5rem); }
+.spell__variants {
+  margin-top: 1rem;
+  max-width: 66ch;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.spell__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* A form written in a document is quoted, not asserted, so it takes the
+   accent the way a citation does. */
+.spell .tl__title { font-family: var(--serif); }
+.spell .tl__year { white-space: nowrap; }
+
+@media print {
+  .spell, .tl { break-inside: avoid; }
+}

@@ -45,8 +45,9 @@ TARTANS = [
         },
     },
     {
-        "slug": "macfadzean",
-        "name": "MacFadzean",
+        "slug": "mcfadyen",
+        "name": "McFadyen",
+        "record": "MacFadzean",
         "count": "B/96 W4 K40 G44 R6 G/8",
         "ref": "STWR 645",
         "palette": {
@@ -162,8 +163,10 @@ def alt_text(t, sett, total):
     else:
         names = names[0]
     article = "an" if str(total)[0] in "8" else "a"
-    return ("The %s tartan: %s %d-thread sett in %s."
-            % (t["name"], article, total, names))
+    recorded = ("" if t.get("record") in (None, t["name"])
+                else ", recorded as %s" % t["record"])
+    return ("The %s tartan%s: %s %d-thread sett in %s."
+            % (t["name"], recorded, article, total, names))
 
 
 def render(t):
