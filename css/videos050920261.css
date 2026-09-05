@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Videos page components. Loaded after css/styles220820261.css and reuses its
+   tokens, type scale and section furniture — nothing from it is redefined.
+
+   The players are facades: a committed poster frame and a play control, with
+   the YouTube iframe swapped in only once the reader asks for it (js/videos.js).
+   That is a privacy decision before a performance one — four autoloaded embeds
+   would hand Google a request from every reader who merely opened the page —
+   and the page states it plainly rather than leaving it implied.
+   ========================================================================== */
+
+/* --- Back-link and notice ------------------------------------------------- */
+/* The same two components as the heritage pages. They are repeated rather than
+   shared because each page loads exactly one page stylesheet, never two, and
+   promoting them into styles220820261.css would mean re-versioning a file every
+   page depends on for the sake of two small blocks. */
+
+.backlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5ch;
+  margin-bottom: 1.25rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.backlink:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.notice {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  margin-block: clamp(1.5rem, 3vw, 2rem);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+.notice__label {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 0.28rem;
+}
+
+/* --- Screen-reader-only text ---------------------------------------------- */
+
+.u-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Video list ----------------------------------------------------------- */
+
+.videos {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+/* Two short clips sit side by side once there is room for both to stay legible;
+   a single feature keeps the full measure to itself. */
+@media (min-width: 52rem) {
+  .videos--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.video {
+  display: grid;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+/* --- The player: poster facade, then iframe ------------------------------- */
+
+.video__stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.video__link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  text-decoration: none;
+  background: #000;
+}
+
+.video__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* The frame lifts to full contrast on hover, so the resting state reads as a
+     still and the hover state as an invitation. */
+  filter: saturate(0.82) contrast(1.02);
+  transition: filter 0.25s, transform 0.4s;
+}
+.video__link:hover .video__poster,
+.video__link:focus-visible .video__poster {
+  filter: none;
+  transform: scale(1.015);
+}
+
+.video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: clamp(3.25rem, 8vw, 4.25rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgb(250 248 244 / 92%);
+  color: var(--accent);
+  box-shadow: 0 2px 14px rgb(0 0 0 / 35%);
+  transition: background-color 0.2s, scale 0.2s;
+}
+.video__play svg { width: 42%; height: 42%; margin-left: 6%; fill: currentColor; }
+.video__link:hover .video__play,
+.video__link:focus-visible .video__play {
+  background: #faf8f4;
+  scale: 1.06;
+}
+
+.video__dur {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  padding: 0.16rem 0.42rem;
+  border-radius: 2px;
+  background: rgb(0 0 0 / 72%);
+  color: #f4f1ea;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Once js/videos.js swaps the facade for the embed, the iframe owns the box. */
+.video__stage iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video__poster,
+  .video__play { transition: none; }
+  .video__link:hover .video__poster,
+  .video__link:focus-visible .video__poster { transform: none; }
+}
+
+/* --- The caption under the player ----------------------------------------- */
+
+.video__body { display: grid; gap: 0.35rem; }
+
+.video__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.video__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+  font-family: var(--mono);
+  font-size: var(--step-meta);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.video__meta span::before {
+  content: "·";
+  margin-right: 0.6ch;
+  color: var(--rule-strong);
+}
+
+.video__desc {
+  margin-top: 0.2rem;
+  max-width: var(--measure);
+  color: var(--ink-2);
+}
+
+.video__out {
+  margin-top: 0.15rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.video__out a {
+  color: var(--ink-3);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.video__out a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* --- Channel call-out ------------------------------------------------------ */
+
+.channel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem) clamp(1.2rem, 3vw, 1.75rem);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+.channel__text { max-width: 46ch; }
+.channel__handle {
+  font-family: var(--mono);
+  font-size: var(--step-meta);
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+.channel__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.18s, border-color 0.18s, background-color 0.18s;
+}
+.channel__cta:hover {
+  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* --- Print ----------------------------------------------------------------- */
+/* On paper a play button is furniture. The poster and the caption carry the
+   record, and the watch URL is spelled out because a link cannot be clicked. */
+
+@media print {
+  .backlink, .video__play, .video__dur, .channel__cta { display: none !important; }
+  .video__stage { box-shadow: none; break-inside: avoid; }
+  .video__poster { filter: grayscale(1); }
+  .video { break-inside: avoid; }
+  .videos--pair { grid-template-columns: minmax(0, 1fr); }
+  .video__out a[href]::after { content: " (" attr(href) ")"; }
+}

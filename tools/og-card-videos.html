@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+  Source for img/og-videos-1200x630.png (the /videos/ share card).
+
+  Render: serve the repo root, then screenshot this page at exactly 1200x630
+  with device_scale_factor=1 into img/og-videos-1200x630.png. Asset paths are
+  root-absolute, so it only renders correctly when served from the site root.
+  Not linked from the site.
+
+  The strip along the bottom is the four poster frames the page itself uses,
+  in page order, so the card and the page cannot drift apart without someone
+  noticing: a poster removed from img/videos/ leaves a hole here too.
+-->
+<html lang="en"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Newsreader;src:url("/fonts/newsreader-latin-var.woff2") format("woff2");font-weight:200 800;}
+@font-face{font-family:"IBM Plex Mono";src:url("/fonts/ibm-plex-mono-500-latin.woff2") format("woff2");font-weight:500;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;background:#faf8f4;color:#17150f;
+     font-family:Newsreader,Georgia,serif;font-optical-sizing:auto;overflow:hidden;
+     display:flex;flex-direction:column;justify-content:space-between;
+     padding:72px 80px 0;position:relative}
+body::before{content:"";position:absolute;inset:0;
+     background:radial-gradient(120% 90% at 100% 0%, #f3efe7 0%, rgba(243,239,231,0) 60%)}
+.rule{height:3px;background:#7e2c18;width:88px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:16px;
+     letter-spacing:.22em;text-transform:uppercase;color:#6e675a;margin-top:26px}
+h1{font-size:88px;font-weight:600;letter-spacing:-.028em;line-height:.95;margin-top:14px}
+.aff{font-size:27px;line-height:1.42;color:#423d33;max-width:760px;margin-top:24px}
+.topics{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:32px;max-width:1040px}
+.topics span{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:14px;
+     letter-spacing:.1em;text-transform:uppercase;color:#6e675a;
+     border:1px solid #dfd9cd;border-radius:2px;padding:7px 11px;background:#fffdfa}
+.strip{display:flex;gap:10px;margin:0 -80px;padding:0 80px 0;position:relative}
+.strip img{width:100%;height:104px;object-fit:cover;border:1px solid #dfd9cd;
+     border-bottom:0;border-radius:3px 3px 0 0;filter:saturate(.86)}
+.strip figure{flex:1;min-width:0}
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;
+      border-top:1px solid #dfd9cd;padding:20px 0 22px;position:relative}
+.ids{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:15px;
+     letter-spacing:.1em;color:#6e675a;line-height:1.9}
+.site{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:16px;
+     letter-spacing:.12em;color:#7e2c18;text-transform:uppercase}
+.play{width:104px;height:104px;border-radius:50%;position:absolute;top:72px;right:80px;
+     background:#fffdfa;box-shadow:0 0 0 1px #dfd9cd;display:grid;place-items:center}
+.play svg{width:38px;height:38px;fill:#7e2c18;margin-left:6px}
+</style></head><body>
+<div class="play"><svg viewBox="0 0 16 16"><path d="M3 1.4 14 8 3 14.6Z"/></svg></div>
+<div>
+  <div class="rule"></div>
+  <p class="eyebrow">Videos</p>
+  <h1>Talks &amp; Appearances</h1>
+  <p class="aff">A Palantir DevCon keynote on workflow generation with Opus,<br>and the AppliedAI team across the UAE</p>
+  <div class="topics">
+    <span>Palantir DevCon</span><span>MBZUAI</span><span>Decoding Data Science</span>
+    <span>Hackathon</span>
+  </div>
+</div>
+<div>
+  <div class="strip">
+    <figure><img src="/img/videos/PyTud9QBkQg-640.jpg" alt=""></figure>
+    <figure><img src="/img/videos/XnDJLZlBHQw-640.jpg" alt=""></figure>
+    <figure><img src="/img/videos/RMJsb3ZlsKE-640.jpg" alt=""></figure>
+    <figure><img src="/img/videos/PrUwBkPCvXA-640.jpg" alt=""></figure>
+  </div>
+  <div class="foot">
+    <p class="ids">YOUTUBE @PHILLIPKINGSTON-AI</p>
+    <p class="site">phillipkingston.com/videos</p>
+  </div>
+</div>
+</body></html>
