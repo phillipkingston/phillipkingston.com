@@ -72,14 +72,12 @@
 
 /* --- Video list ----------------------------------------------------------- */
 
+/* Every entry gets the full measure. A two-up grid was tried and rejected:
+   at half width the poster stops carrying the frame it was chosen for, and a
+   one-minute clip of a room full of people becomes a thumbnail of nobody. */
 .videos {
   display: grid;
-  gap: clamp(2rem, 4vw, 3rem);
-}
-/* Two short clips sit side by side once there is room for both to stay legible;
-   a single feature keeps the full measure to itself. */
-@media (min-width: 52rem) {
-  .videos--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  gap: clamp(2.25rem, 5vw, 3.5rem);
 }
 
 .video {
@@ -224,6 +222,144 @@
 }
 .video__out a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
+/* --- Podcast episodes ------------------------------------------------------ */
+/* An audio episode has no frame to show, so it gets a plate instead of a
+   poster: the episode number set in mono over a level meter drawn in CSS.
+   Nothing here is borrowed artwork — a show's cover art belongs to the show,
+   and the page links out to it rather than reproducing it. */
+
+.pod {
+  display: grid;
+  gap: clamp(1.1rem, 2.5vw, 1.6rem);
+}
+@media (min-width: 46rem) {
+  .pod--audio {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+  }
+}
+
+.pod__plate {
+  display: grid;
+  place-content: center;
+  gap: 0.7rem;
+  width: 9rem;
+  aspect-ratio: 1;
+  padding: 1rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--accent);
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+}
+.pod__ep {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.pod__meter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  height: 1.75rem;
+}
+.pod__meter i {
+  display: block;
+  width: 3px;
+  height: var(--h, 50%);
+  background: var(--accent);
+  opacity: 0.55;
+  border-radius: 1px;
+}
+
+.pod__body { display: grid; gap: 0.4rem; min-width: 0; }
+
+.pod__title {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+  text-wrap: pretty;
+  max-width: 40ch;
+}
+.pod__desc {
+  margin-top: 0.35rem;
+  max-width: var(--measure);
+  color: var(--ink-2);
+}
+.pod__desc + .pod__desc { margin-top: 0.65rem; }
+
+/* Who is in the room. A conversation is its participants, so they are listed
+   rather than left to the description to imply. */
+.people {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--rule);
+  max-width: var(--measure);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+.people + .people { margin-top: 0.45rem; padding-top: 0; border-top: 0; }
+.people b {
+  display: block;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* --- Where to listen ------------------------------------------------------- */
+/* One pill per platform, each saying what it actually points at: an episode,
+   a series or an announcement. A link that promises an episode and delivers a
+   show page is a small lie, and there is no reason to tell it. */
+
+.listen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.listen a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.7ch;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.18s, color 0.18s, background-color 0.18s;
+}
+.listen a:hover,
+.listen a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--paper-raised);
+}
+.listen__name {
+  font-family: var(--mono);
+  font-size: var(--step-meta);
+  letter-spacing: 0.02em;
+}
+.listen__kind {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.listen a:hover .listen__kind { color: var(--accent); }
+
 /* --- Channel call-out ------------------------------------------------------ */
 
 .channel {
@@ -272,9 +408,14 @@
 
 @media print {
   .backlink, .video__play, .video__dur, .channel__cta { display: none !important; }
-  .video__stage { box-shadow: none; break-inside: avoid; }
+  .video__stage, .pod__plate { box-shadow: none; break-inside: avoid; }
   .video__poster { filter: grayscale(1); }
-  .video { break-inside: avoid; }
-  .videos--pair { grid-template-columns: minmax(0, 1fr); }
+  .video, .pod { break-inside: avoid; }
   .video__out a[href]::after { content: " (" attr(href) ")"; }
+  .listen a { border-color: var(--rule-strong); }
+  .listen a[href]::after {
+    content: " " attr(href);
+    font-size: 0.625rem;
+    color: var(--ink-3);
+  }
 }
