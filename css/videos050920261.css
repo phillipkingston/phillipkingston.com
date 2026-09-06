@@ -5,16 +5,17 @@
 
    The players are facades: a committed poster frame and a play control, with
    the YouTube iframe swapped in only once the reader asks for it (js/videos.js).
-   That is a privacy decision before a performance one — four autoloaded embeds
-   would hand Google a request from every reader who merely opened the page —
-   and the page states it plainly rather than leaving it implied.
+   That is a privacy decision before a performance one — five autoloaded embeds
+   would hand Google a request from every reader who merely opened the page.
+   Every image here, podcast art included, is served from this domain for the
+   same reason.
    ========================================================================== */
 
-/* --- Back-link and notice ------------------------------------------------- */
-/* The same two components as the heritage pages. They are repeated rather than
-   shared because each page loads exactly one page stylesheet, never two, and
-   promoting them into styles220820261.css would mean re-versioning a file every
-   page depends on for the sake of two small blocks. */
+/* --- Back-link ------------------------------------------------------------ */
+/* The same component as the heritage pages. It is repeated rather than shared
+   because each page loads exactly one page stylesheet, never two, and promoting
+   it into styles220820261.css would mean re-versioning a file every page
+   depends on for the sake of one small block. */
 
 .backlink {
   display: inline-flex;
@@ -30,31 +31,6 @@
   border-bottom: 1px solid transparent;
 }
 .backlink:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-.notice {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.75rem;
-  padding: 0.9rem 1.1rem;
-  margin-block: clamp(1.5rem, 3vw, 2rem);
-  background: var(--paper-raised);
-  border: 1px solid var(--rule);
-  border-left: 2px solid var(--accent);
-  border-radius: 2px;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--ink-2);
-  max-width: 60ch;
-}
-.notice__label {
-  font-family: var(--mono);
-  font-weight: 500;
-  font-size: var(--step-eyebrow);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  padding-top: 0.28rem;
-}
 
 /* --- Screen-reader-only text ---------------------------------------------- */
 
@@ -223,10 +199,11 @@
 .video__out a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 /* --- Podcast episodes ------------------------------------------------------ */
-/* An audio episode has no frame to show, so it gets a plate instead of a
-   poster: the episode number set in mono over a level meter drawn in CSS.
-   Nothing here is borrowed artwork — a show's cover art belongs to the show,
-   and the page links out to it rather than reproducing it. */
+/* An audio episode has no frame of its own, so it is identified the way every
+   podcast app identifies one: by the show's cover art, square, with the episode
+   number underneath. The art belongs to the show, so it is a link back to the
+   episode on Apple rather than decoration, and it is served from this domain
+   rather than hotlinked from Apple's CDN. */
 
 .pod {
   display: grid;
@@ -234,48 +211,44 @@
 }
 @media (min-width: 46rem) {
   .pod--audio {
-    grid-template-columns: 9rem minmax(0, 1fr);
+    grid-template-columns: 11rem minmax(0, 1fr);
     align-items: start;
     gap: clamp(1.5rem, 4vw, 2.75rem);
   }
 }
 
-.pod__plate {
-  display: grid;
-  place-content: center;
-  gap: 0.7rem;
-  width: 9rem;
-  aspect-ratio: 1;
-  padding: 1rem;
-  background: var(--paper-raised);
-  border: 1px solid var(--rule);
-  border-top: 2px solid var(--accent);
+.pod__art { width: 9rem; }
+@media (min-width: 46rem) { .pod__art { width: 100%; } }
+
+.pod__art a {
+  display: block;
   border-radius: 3px;
-  box-shadow: var(--shadow);
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--rule), var(--shadow);
+  transition: box-shadow 0.18s, transform 0.25s;
 }
+.pod__art a:hover,
+.pod__art a:focus-visible {
+  box-shadow: 0 0 0 1px var(--accent), var(--shadow);
+  transform: translateY(-2px);
+}
+.pod__art img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
 .pod__ep {
+  margin-top: 0.6rem;
   font-family: var(--mono);
   font-weight: 500;
-  font-size: 1.125rem;
-  letter-spacing: 0.1em;
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   text-align: center;
-  color: var(--ink);
+  color: var(--ink-3);
   font-variant-numeric: tabular-nums;
 }
-.pod__meter {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 3px;
-  height: 1.75rem;
-}
-.pod__meter i {
-  display: block;
-  width: 3px;
-  height: var(--h, 50%);
-  background: var(--accent);
-  opacity: 0.55;
-  border-radius: 1px;
+
+@media (prefers-reduced-motion: reduce) {
+  .pod__art a { transition: box-shadow 0.18s; }
+  .pod__art a:hover, .pod__art a:focus-visible { transform: none; }
 }
 
 .pod__body { display: grid; gap: 0.4rem; min-width: 0; }
@@ -408,7 +381,8 @@
 
 @media print {
   .backlink, .video__play, .video__dur, .channel__cta { display: none !important; }
-  .video__stage, .pod__plate { box-shadow: none; break-inside: avoid; }
+  .video__stage { box-shadow: none; break-inside: avoid; }
+  .pod__art a { box-shadow: 0 0 0 1px var(--rule); }
   .video__poster { filter: grayscale(1); }
   .video, .pod { break-inside: avoid; }
   .video__out a[href]::after { content: " (" attr(href) ")"; }

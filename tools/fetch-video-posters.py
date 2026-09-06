@@ -10,7 +10,7 @@ The posters are committed rather than hotlinked from i.ytimg.com on purpose.
 /videos/ loads nothing from Google until the reader presses play, and a poster
 served from ytimg would break that: it would hand YouTube a request, and an IP
 address, from every reader who merely scrolled past. Serving the frame from
-this domain keeps the promise the page makes in its own privacy note.
+this domain is what keeps that true.
 
 Two widths so the page can offer a srcset: 1280 is the frame as YouTube stores
 it, 640 covers a single-column phone at 2x. Both are progressive JPEG, which
