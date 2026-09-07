@@ -294,46 +294,69 @@
 }
 .listen a:hover .listen__kind { color: var(--accent); }
 
-/* --- Channel call-out ------------------------------------------------------ */
+/* --- Channel button in the masthead --------------------------------------- */
+/* The channel used to have a section of its own at the foot of the page, which
+   spent a full band of the page on one sentence and one link. It is a
+   destination, not a chapter, so it now sits in the masthead where the reader
+   is already deciding where to go: the play mark for what it is, the name for
+   where it goes, the handle for whose it is. */
 
-.channel {
-  display: flex;
-  flex-wrap: wrap;
+.channel-cta {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem 2rem;
-  padding: clamp(1.1rem, 2.5vw, 1.5rem) clamp(1.2rem, 3vw, 1.75rem);
+  gap: 0.75rem;
+  flex: none;
+  align-self: flex-start;
+  padding: 0.6rem 0.85rem;
   background: var(--paper-raised);
   border: 1px solid var(--rule);
   border-radius: 3px;
+  text-decoration: none;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.25s;
 }
-.channel__text { max-width: 46ch; }
-.channel__handle {
+@media (min-width: 48rem) {
+  .channel-cta { margin-top: 0.35rem; }
+}
+.channel-cta:hover,
+.channel-cta:focus-visible {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.channel-cta__mark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  aspect-ratio: 1;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.channel-cta__mark svg { width: 38%; height: 38%; margin-left: 8%; fill: currentColor; }
+
+.channel-cta__text { display: grid; gap: 0.15rem; }
+.channel-cta__label {
   font-family: var(--mono);
+  font-weight: 500;
   font-size: var(--step-meta);
   letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.channel-cta__handle {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink-3);
 }
-.channel__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6ch;
-  padding: 0.5rem 0.9rem;
-  border: 1px solid var(--rule-strong);
-  border-radius: 2px;
-  font-family: var(--mono);
-  font-size: var(--step-eyebrow);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.18s, border-color 0.18s, background-color 0.18s;
-}
-.channel__cta:hover {
-  color: var(--paper);
-  background: var(--accent);
-  border-color: var(--accent);
+.channel-cta:hover .channel-cta__label,
+.channel-cta:hover .channel-cta__handle { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .channel-cta { transition: border-color 0.18s; }
+  .channel-cta:hover, .channel-cta:focus-visible { transform: none; }
 }
 
 /* --- Print ----------------------------------------------------------------- */
@@ -341,7 +364,10 @@
    record, and the watch URL is spelled out because a link cannot be clicked. */
 
 @media print {
-  .backlink, .video__play, .video__dur, .channel__cta { display: none !important; }
+  .backlink, .video__play, .video__dur { display: none !important; }
+  /* On paper the button is furniture; the handle it points at is not. */
+  .channel-cta { border: 0; padding: 0; }
+  .channel-cta__mark { display: none; }
   .video__stage { box-shadow: none; break-inside: avoid; }
   .video__poster { filter: grayscale(1); }
   .video, .pod { break-inside: avoid; }
