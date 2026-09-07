@@ -149,6 +149,11 @@
 }
 
 /* --- The caption under the player ----------------------------------------- */
+/* The caption runs to the same width as the player above it. The site's 66ch
+   measure governs running prose, which these are not: they are two or three
+   sentences apiece, read alongside the frame they describe, and a column of
+   text stopping two thirds of the way across a full-width poster reads as an
+   accident rather than a decision. */
 
 .video__body { display: grid; gap: 0.35rem; }
 
@@ -179,7 +184,6 @@
 
 .video__desc {
   margin-top: 0.2rem;
-  max-width: var(--measure);
   color: var(--ink-2);
 }
 
@@ -209,6 +213,8 @@
   gap: clamp(1.1rem, 2.5vw, 1.6rem);
 }
 
+/* Same reasoning as the video caption above: full width under a full-width
+   player, no measure of its own. */
 .pod__body { display: grid; gap: 0.4rem; min-width: 0; }
 
 .pod__title {
@@ -218,11 +224,9 @@
   letter-spacing: -0.014em;
   color: var(--ink);
   text-wrap: pretty;
-  max-width: 40ch;
 }
 .pod__desc {
   margin-top: 0.35rem;
-  max-width: var(--measure);
   color: var(--ink-2);
 }
 .pod__desc + .pod__desc { margin-top: 0.65rem; }
@@ -233,7 +237,6 @@
   margin-top: 1rem;
   padding-top: 0.8rem;
   border-top: 1px solid var(--rule);
-  max-width: var(--measure);
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--ink-3);
