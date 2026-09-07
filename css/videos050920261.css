@@ -5,10 +5,9 @@
 
    The players are facades: a committed poster frame and a play control, with
    the YouTube iframe swapped in only once the reader asks for it (js/videos.js).
-   That is a privacy decision before a performance one — five autoloaded embeds
+   That is a privacy decision before a performance one — six autoloaded embeds
    would hand Google a request from every reader who merely opened the page.
-   Every image here, podcast art included, is served from this domain for the
-   same reason.
+   Every image on the page is served from this domain for the same reason.
    ========================================================================== */
 
 /* --- Back-link ------------------------------------------------------------ */
@@ -199,56 +198,15 @@
 .video__out a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 /* --- Podcast episodes ------------------------------------------------------ */
-/* An audio episode has no frame of its own, so it is identified the way every
-   podcast app identifies one: by the show's cover art, square, with the episode
-   number underneath. The art belongs to the show, so it is a link back to the
-   episode on Apple rather than decoration, and it is served from this domain
-   rather than hotlinked from Apple's CDN. */
+/* Both episodes have a video version, so each is presented as a player under
+   the same click-to-load facade as the rest of the page, with the caption and
+   the listening links underneath. If an audio-only episode ever lands here it
+   will need a tile of its own; there is deliberately no half-built one waiting
+   for it. */
 
 .pod {
   display: grid;
   gap: clamp(1.1rem, 2.5vw, 1.6rem);
-}
-@media (min-width: 46rem) {
-  .pod--audio {
-    grid-template-columns: 11rem minmax(0, 1fr);
-    align-items: start;
-    gap: clamp(1.5rem, 4vw, 2.75rem);
-  }
-}
-
-.pod__art { width: 9rem; }
-@media (min-width: 46rem) { .pod__art { width: 100%; } }
-
-.pod__art a {
-  display: block;
-  border-radius: 3px;
-  overflow: hidden;
-  box-shadow: 0 0 0 1px var(--rule), var(--shadow);
-  transition: box-shadow 0.18s, transform 0.25s;
-}
-.pod__art a:hover,
-.pod__art a:focus-visible {
-  box-shadow: 0 0 0 1px var(--accent), var(--shadow);
-  transform: translateY(-2px);
-}
-.pod__art img { width: 100%; aspect-ratio: 1; object-fit: cover; }
-
-.pod__ep {
-  margin-top: 0.6rem;
-  font-family: var(--mono);
-  font-weight: 500;
-  font-size: var(--step-eyebrow);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--ink-3);
-  font-variant-numeric: tabular-nums;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pod__art a { transition: box-shadow 0.18s; }
-  .pod__art a:hover, .pod__art a:focus-visible { transform: none; }
 }
 
 .pod__body { display: grid; gap: 0.4rem; min-width: 0; }
@@ -382,7 +340,6 @@
 @media print {
   .backlink, .video__play, .video__dur, .channel__cta { display: none !important; }
   .video__stage { box-shadow: none; break-inside: avoid; }
-  .pod__art a { box-shadow: 0 0 0 1px var(--rule); }
   .video__poster { filter: grayscale(1); }
   .video, .pod { break-inside: avoid; }
   .video__out a[href]::after { content: " (" attr(href) ")"; }
