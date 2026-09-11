@@ -26,12 +26,11 @@ from PIL import Image
 
 # Video ids in the order they appear on the page. The id is the filename stem,
 # so a video dropped from the page leaves an obvious orphan in img/videos/.
+# The Palantir, MBZUAI and Decoding Data Science videos are not here: they use
+# a photograph from the event, made by tools/make-video-covers.py.
 VIDEOS = [
     "b80GKpEcr0M",  # AWS for AI ep 1 — a podcast that is also a video
     "P8IVkxhXCw8",  # The Derby Mill Series ep 15 — a podcast that is also a video
-    "PyTud9QBkQg",  # Palantir DevCon 2024 keynote
-    "XnDJLZlBHQw",  # MBZUAI, Abu Dhabi
-    "RMJsb3ZlsKE",  # Decoding Data Science, Dubai
     "PrUwBkPCvXA",  # February 2024 hackathon winners
 ]
 
