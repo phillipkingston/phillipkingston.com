@@ -90,6 +90,7 @@
                     <li><a href="#evaluation"><span class="num">06</span> <span>Evaluation</span></a></li>
                     <li><a href="#life-support"><span class="num">07</span> <span>Life Support</span></a></li>
                     <li><a href="#supervisory-control"><span class="num">08</span> <span>Supervisory Control</span></a></li>
+                    <li><a href="#proof-carrying"><span class="num">09</span> <span>Proof-Carrying Workflows</span></a></li>
                     <li><a href="#papers"><span class="num">&#8212;</span> <span>Papers</span></a></li>
                     <li><a href="/videos/"><span class="num">&#8212;</span> <span>Videos &amp; Podcasts</span></a></li>
                     <li><a href="#connect"><span class="num">&#8212;</span> <span>Connect</span></a></li>
@@ -297,8 +298,35 @@
                     </div>
                 </section>
 
+                <section class="section" id="proof-carrying" aria-labelledby="proof-carrying-h">
+                    <div class="section__head">
+                        <p class="section__num">09</p>
+                        <h2 id="proof-carrying-h">Proof-Carrying Workflow Construction</h2>
+                    </div>
+                    <div class="claims">
+                        <article class="claim">
+                            <div class="claim__head"><h3>Streamed Workflow Graphs</h3></div>
+                            <div class="claim__body"><p>Workflows are increasingly assembled a piece at a time: an agent proposes a task, a service attaches evidence, a tool closes one branch and opens another. Kingston treats this as an admission problem. An addition can be well typed and pass every local check, yet still remove the last acceptable way to finish the workflow. The condition he argues for is completion viability: after an addition is admitted, at least one policy-compliant completion must remain.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head">
+                                <h3>Proof-Carrying Streams</h3>
+                                <p class="stat">
+                                    <span class="stat__fig">Lean 4</span>
+                                    <span class="stat__label">machine-checked core results, from stream soundness to residual separation</span>
+                                </p>
+                            </div>
+                            <div class="claim__body"><p>In a proof-carrying stream, the unfinished workflow carries a certificate that moves with it. Each admitted addition comes with a checked update to that certificate, witnessing that an acceptable completion still exists. The semantic object underneath is the viability residual, the set of future addition streams that leave the workflow still finishable. When an addition is consumed, the residual updates by a left derivative, and that identity turns step-by-step checks into a guarantee that holds at every admitted prefix. The producer can build certificates any way it likes; only the checker has to be trusted.</p></div>
+                        </article>
+                        <article class="claim">
+                            <div class="claim__head"><h3>The Coarsest Viability-Exact Proof State</h3></div>
+                            <div class="claim__body"><p>What must any incremental checker remember to answer viability exactly? Kingston proves that it must keep apart any two construction states whose residuals differ, and that grouping states by equal residuals gives the coarsest viability-exact abstraction, onto which every other one factors uniquely. A finite viability-exact abstraction therefore exists exactly when there are finitely many distinct residuals. The theory is independent of representation: an automaton, an SMT formula or a family of candidate plans can all serve as the certificate, and a two-route example separates local legality, successor viability and residual completeness, three things that are usually conflated.</p></div>
+                        </article>
+                    </div>
+                </section>
+
                 <section class="coda">
-                    <p>The work connects AI to operational business processes: a formal notion of workflow intention, multimodal data read through neural architectures, domain knowledge injected via graphs, and results optimized for what they cost to run. The path it opens runs from a high-level process requirement to an executable workflow that still meets its domain and performance constraints. The later work carries the same ideas out of software, into quantitative frameworks for judging workflow quality and into safety-critical autonomous control, where physics-grounded models and neural controllers together keep life support running in extreme environments.</p>
+                    <p>The work connects AI to operational business processes: a formal notion of workflow intention, multimodal data read through neural architectures, domain knowledge injected via graphs, and results optimized for what they cost to run. The path it opens runs from a high-level process requirement to an executable workflow that still meets its domain and performance constraints. The later work carries the same ideas out of software, into quantitative frameworks for judging workflow quality and into safety-critical autonomous control, where physics-grounded models and neural controllers together keep life support running in extreme environments. The most recent work brings the formal guarantees back to workflow construction itself: every addition an AI makes to a workflow carries a checked proof that the workflow can still be finished.</p>
                 </section>
 
                 <section class="section" id="papers" aria-labelledby="papers-h">
@@ -309,6 +337,11 @@
 
                     <h3 class="papers__year">2026</h3>
                     <ul class="papers">
+                        <li class="paper"><a href="/pdf/Opus-Proof-Carrying-Streamed-Workflow-Graphs.pdf" target="_blank" rel="noopener">
+                            <time class="paper__date" datetime="2026-08">Aug 2026</time>
+                            <span class="paper__title">Opus &#8211; Proof-Carrying Streamed Workflow Graphs</span>
+                            <span class="paper__cta">PDF &#8599;</span>
+                        </a></li>
                         <li class="paper"><a href="/pdf/Exact-Viability-and-Gas-Allocation-in-a-Capacity-Limited-Venting-Two-Gas-Atmosphere.pdf" target="_blank" rel="noopener">
                             <time class="paper__date" datetime="2026-08">Aug 2026</time>
                             <span class="paper__title">Exact Viability and Gas Allocation in a Capacity-Limited Venting Two-Gas Atmosphere</span>
@@ -442,7 +475,7 @@
       "image": "https://www.phillipkingston.com/img/Apple-Touch-180x180.png",
       "jobTitle": ["Visiting Professor", "Member of Technical Staff"],
       "description": "Engineer and entrepreneur working on AI-driven workflow automation, quantitative workflow evaluation, and safety-critical autonomous control.",
-      "knowsAbout": ["Workflow Automation", "Large Work Models", "Multimodal Machine Learning", "Graph Theory", "Reinforcement Learning", "Supervisory Control Theory", "Discrete Event Systems", "Life Support Systems"],
+      "knowsAbout": ["Workflow Automation", "Large Work Models", "Multimodal Machine Learning", "Graph Theory", "Reinforcement Learning", "Supervisory Control Theory", "Discrete Event Systems", "Formal Verification", "Life Support Systems"],
       "identifier": {
         "@type": "PropertyValue",
         "propertyID": "ORCID",
