@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* ==========================================================================
-   Videos page components. Loaded after css/styles220820261.css and reuses its
+   Videos page components. Loaded after css/styles110920261.css and reuses its
    tokens, type scale and section furniture — nothing from it is redefined.
 
    The players are facades: a committed poster frame and a play control, with
@@ -13,7 +13,7 @@
 /* --- Back-link ------------------------------------------------------------ */
 /* The same component as the heritage pages. It is repeated rather than shared
    because each page loads exactly one page stylesheet, never two, and promoting
-   it into styles220820261.css would mean re-versioning a file every page
+   it into styles110920261.css would mean re-versioning a file every page
    depends on for the sake of one small block. */
 
 .backlink {
