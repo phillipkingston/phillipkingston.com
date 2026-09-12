@@ -79,9 +79,10 @@ COVERS = [
         "box": (0, 0, 1280, 720),
     },
     {
-        # The /function1 speaker card. 1600x900, also already 16:9.
+        # The /function1 speaker card. 1600x900, also already 16:9. The second
+        # cut of the card, without the "CTO" line under the name.
         "slug": "function1-2025-cover",
-        "source": "function1-kingston-cover.jpg",
+        "source": "function1-kingston-cover-2025.png",
         "box": (0, 0, 1600, 900),
     },
 ]
