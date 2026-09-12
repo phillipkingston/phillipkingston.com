@@ -61,6 +61,12 @@
   min-width: 0;
 }
 
+/* The page is one run of entries newest first, so an anchor lands on the entry
+   rather than on a section that carries its own scroll margin. Each entry needs
+   that margin instead, or the line above it sits hard against the viewport. */
+.video,
+.pod { scroll-margin-top: 1.5rem; }
+
 /* --- The player: poster facade, then iframe ------------------------------- */
 
 .video__stage {
