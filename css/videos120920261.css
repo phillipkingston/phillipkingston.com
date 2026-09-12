@@ -200,6 +200,10 @@
   border-bottom: 1px solid var(--rule);
 }
 .video__out a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+/* An entry can point at more than one place — the recording and the host's own
+   write-up of the event — and two underlined links running together read as
+   one. The gap is what separates them. */
+.video__out a + a { margin-left: 1.25rem; }
 
 /* --- Podcast episodes ------------------------------------------------------ */
 /* Both episodes have a video version, so each is presented as a player under
